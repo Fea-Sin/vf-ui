@@ -1,35 +1,23 @@
 <template>
-  <div class="home">
-    HELLO
-    <ul>
-      <li>基础化工程</li>
-      <li>VUE</li>
-      <li>BABEL</li>
-      <li>TS</li>
-      <li>LESS</li>
-      <li>SCSS</li>
-      <li>CSS提取</li>
-      <li>资源处理图片、字体、媒体</li>
-      <li>ESLint</li>
-      <li>Prettier</li>
-      <li>VUE + TS</li>
-      <li>单元测试</li>
-      <li>依赖分析</li>
-      <li>Tree Shaking</li>
-    </ul>
-  </div>
+  <div class="home">{{ title }}</div>
 </template>
 <script lang="ts">
 import Vue from "vue";
-import Component from "vue-class-component";
 
-@Component({})
-export default class Home extends Vue {}
+const vfui = "VF - UI";
+
+export default Vue.extend({
+  data() {
+    return {
+      title: vfui,
+    };
+  },
+});
 </script>
 
 <style lang="less" scoped>
 .home {
-  padding: 10px;
-  color: green;
+  padding: 16px;
+  color: #545454;
 }
 </style>

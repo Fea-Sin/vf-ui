@@ -1,8 +1,8 @@
 {
   "name": "vf-ui",
   "version": "1.1.1",
-  "description": "view frame ui",
-  "main": "index.js",
+  "description": "Vue View Frame UI",
+  "main": "src/index.ts",
   "files": [
     "lib",
     "src",

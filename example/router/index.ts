@@ -9,22 +9,12 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     component: Layout,
-    redirect: "home",
+    redirect: "/home",
     children: [
-      {
-        path: "vfa",
-        name: "VFA",
-        component: () => import("../view/vfa/index.vue"),
-      },
       {
         path: "home",
         name: "HOME",
         component: () => import("../view/home/index.vue"),
-      },
-      {
-        path: "vfb",
-        name: "VFB",
-        component: () => import("../view/vfb/index.vue"),
       },
       {
         path: "com",

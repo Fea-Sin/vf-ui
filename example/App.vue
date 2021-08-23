@@ -5,10 +5,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component
-export default class App extends Vue {}
+export default Vue.extend({
+  created(): void {
+    console.log("VF-UI App Created");
+  },
+  mounted(): void {
+    console.log("VF-UI App Mounted");
+  },
+});
 </script>
 
 <style scoped>
