@@ -1,0 +1,19 @@
+{
+  "name": "vfui-theme",
+  "version": "1.0.0",
+  "description": "VF-UI component theme",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"HELLO TEST\" "
+  },
+  "keywords": [
+    "VF-UI",
+    "theme"
+  ],
+  "author": "feasin",
+  "license": "MIT"
+}
