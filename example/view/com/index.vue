@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title">COM</div>
+    <div class="title">ALERT</div>
   </div>
 </template>
 <script lang="ts">

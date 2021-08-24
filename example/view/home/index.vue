@@ -1,5 +1,8 @@
 <template>
-  <div class="home">{{ title }}</div>
+  <div class="home">
+    <div class="box">{{ title }}</div>
+    <div class="box">ALERT</div>
+  </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -19,5 +22,10 @@ export default Vue.extend({
 .home {
   padding: 16px;
   color: #545454;
+  padding-top: 0;
+}
+.box {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 </style>
