@@ -1,7 +1,7 @@
 <template>
-  <div class="vf-alert" role="alert">
+  <div class="vf-alert" :class="['is-' + effect, typeClass]" role="alert">
     <div class="vf-alert__content">
-      <div class="vf-alert__title">
+      <div class="vf-alert__title" v-if="title || $slots.title">
         <slot name="title">{{ title }}</slot>
       </div>
       <p class="vf-alert__description" v-if="$slots.default && !description">
@@ -28,6 +28,22 @@ export default Vue.extend({
       default: "",
     },
     description: String,
+    type: {
+      type: String,
+      default: "info",
+    },
+    effect: {
+      type: String,
+      default: "light",
+      validator: function (value) {
+        return ["light", "dark"].indexOf(value) !== -1;
+      },
+    },
+  },
+  computed: {
+    typeClass() {
+      return `vf-alert--${this.type}`;
+    },
   },
 });
 </script>

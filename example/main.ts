@@ -8,6 +8,7 @@ import "./styles/index.less";
 import "./styles/sass/index.scss";
 
 // VF-UI style
+import "../packages/theme/src/index.less";
 
 Vue.config.productionTip = false;
 
