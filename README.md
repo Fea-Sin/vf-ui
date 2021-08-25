@@ -2,13 +2,7 @@
 
 ## 项目简介
 
-vf-ui vue 组件框架
-
-- ts
-
-- vue-property-decorator
-
-- vuex-class
+VF-UI TS VUE 组件框架
 
 ## Project setup
 

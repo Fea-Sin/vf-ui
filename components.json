@@ -1,0 +1,4 @@
+{
+  "index": "./src/index.ts",
+  "alert": "./packages/alert/index.ts"
+}

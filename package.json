@@ -1,5 +1,5 @@
 {
-  "name": "vf-ui",
+  "name": "vf-vue-ui",
   "version": "1.1.1",
   "description": "Vue View Frame UI",
   "main": "src/index.ts",
@@ -15,8 +15,11 @@
     "prettier": "npx prettier --write --config .prettierrc.js src/**/*",
     "lintfix": "eslint --fix --ext .js,.jsx,.vue,.ts,.tsx --config .eslintrc.js",
     "dev": "cross-env NODE_ENV=development webpack serve --config ./build/webpack.dev.config.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.example.prod.config.js",
-    "build:theme": "gulp build --gulpfile packages/theme/gulpfile.js && cp-cli packages/theme/lib lib/theme"
+    "build:example": "cross-env NODE_ENV=production webpack --config ./build/webpack.example.prod.config.js",
+    "build:theme": "gulp build --gulpfile packages/theme/gulpfile.js && cp-cli packages/theme/lib lib/theme",
+    "build:component": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
+    "build": "npm run build:theme && npm run build:component",
+    "prepublishOnly": "npm run test"
   },
   "keywords": [
     "element",
