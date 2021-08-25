@@ -3,6 +3,7 @@ node_modules
 /dist
 package-lock.json
 example/dist
+lib
 
 
 # local env files
