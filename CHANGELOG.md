@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5 / 2021-08-26
+
+VF-UI Alert is done
+
 ## 1.1.4 / 2021-08-26
 
 VF-UI common export
