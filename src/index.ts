@@ -1,11 +1,11 @@
-import Alert from "../packages/alert";
+import Alert, { AlertName } from "../packages/alert";
 
 const { version } = require("../package.json");
-const components = [Alert];
+const components = [[AlertName, Alert]];
 
 const install = function (Vue: any) {
   components.forEach((component) => {
-    Vue.component(component.name, component);
+    Vue.component(component[0], component[1]);
   });
 };
 

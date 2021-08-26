@@ -1,5 +1,10 @@
 <template>
-  <div class="vf-alert" :class="['is-' + effect, typeClass]" role="alert">
+  <div
+    class="vf-alert"
+    :class="['is-' + effect, typeClass]"
+    v-show="visible"
+    role="alert"
+  >
     <div class="vf-alert__content">
       <div class="vf-alert__title" v-if="title || $slots.title">
         <slot name="title">{{ title }}</slot>
@@ -15,8 +20,8 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
-  name: "VfAlert",
   data() {
     return {
       visible: true,
