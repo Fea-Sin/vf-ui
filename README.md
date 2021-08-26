@@ -15,6 +15,8 @@ npm run dev
 
 ## 主要功能
 
+- VfAlert
+
 ## Compiles and minifies for production
 
 ```
