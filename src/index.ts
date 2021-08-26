@@ -1,5 +1,6 @@
 import Alert from "../packages/alert";
 
+const { version } = require("../package.json");
 const components = [Alert];
 
 const install = function (Vue: any) {
@@ -13,7 +14,7 @@ if (typeof window !== "undefined" && window.Vue) {
 }
 
 export default {
-  version: "1.1.1",
+  version,
   install,
   Alert,
 };
