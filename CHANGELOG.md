@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4 / 2021-08-26
+
+VF-UI common export
+
 ## 1.1.3 / 2021-08-26
 
 VF-UI name install

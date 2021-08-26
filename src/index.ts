@@ -1,7 +1,7 @@
-import Alert, { AlertName } from "../packages/alert";
+import VfAlert, { AlertName } from "../packages/alert";
 
-const { version } = require("../package.json");
-const components = [[AlertName, Alert]];
+const PACKAGE = require("../package.json");
+const components = [[AlertName, VfAlert]];
 
 const install = function (Vue: any) {
   components.forEach((component) => {
@@ -13,8 +13,11 @@ if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);
 }
 
+export const Alert = VfAlert;
+export const version = PACKAGE.version;
+
 export default {
-  version,
   install,
-  Alert,
+  version: PACKAGE.version,
+  VfAlert,
 };
