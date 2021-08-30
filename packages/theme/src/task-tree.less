@@ -1,0 +1,42 @@
+@import "./common/variable";
+
+@vftasktree: vf-task-tree;
+@vftaskfolder: vf-task-folder;
+
+ul,
+ul li {
+  list-style-type: none;
+}
+
+.@{vftasktree} {
+  width: 100%;
+  font-size: 14px;
+  color: @--task-tree-color;
+
+  li {
+    line-height: 25px;
+  }
+}
+
+.@{vftaskfolder} {
+  width: 100%;
+  margin-top: 5px;
+
+  &.is-leaf {
+    font-size: 14px;
+  }
+  &.is-folder {
+    font-size: 14px;
+  }
+
+  & .title {
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  & .sub-folder {
+    font-size: 14px;
+    margin-left: @--task-tree-sub-folder-margin-left;
+    margin-top: @--task-tree-sub-folder-margin-top;
+  }
+}

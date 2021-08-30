@@ -1,7 +1,7 @@
 import { VFUIComponent } from "./component";
 
 interface ITaskItem {
-  name: string;
+  title: string;
   leaf: boolean;
   expanded?: boolean;
   children?: Array<ITaskItem>;

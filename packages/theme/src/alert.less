@@ -1,8 +1,8 @@
 @import "common/variable";
 
-@vfclass: vf-alert;
+@vfalert: vf-alert;
 
-.@{vfclass} {
+.@{vfalert} {
   font-size: 14px;
   width: 100%;
   padding: @--alert-padding;
@@ -32,7 +32,7 @@
       background-color: @--color-info;
       color: @--color-white;
     }
-    .@{vfclass}__description {
+    .@{vfalert}__description {
       color: @--color-info;
     }
   }
@@ -42,7 +42,7 @@
       background-color: @--alert-success-color;
       color: @--color-success;
 
-      .@{vfclass}__description {
+      .@{vfalert}__description {
         color: @--color-success;
       }
     }
@@ -58,7 +58,7 @@
       background-color: @--alert-warning-color;
       color: @--color-warning;
 
-      .@{vfclass}__description {
+      .@{vfalert}__description {
         color: @--color-warning;
       }
     }
@@ -74,7 +74,7 @@
       background-color: @--alert-danger-color;
       color: @--color-danger;
 
-      .@{vfclass}__description {
+      .@{vfalert}__description {
         color: @--color-danger;
       }
     }
