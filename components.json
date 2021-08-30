@@ -1,4 +1,5 @@
 {
   "index": "./src/index.ts",
-  "alert": "./packages/alert/index.ts"
+  "alert": "./packages/alert/index.ts",
+  "task-tree": "./packages/task-tree/index.ts"
 }

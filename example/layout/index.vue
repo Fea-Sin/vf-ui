@@ -4,6 +4,7 @@
     <div class="nav">
       <router-link to="/home" class="box">HOME</router-link>
       <router-link to="/com" class="box">ALERT</router-link>
+      <router-link to="/task-tree" class="box">TASK-TREE</router-link>
     </div>
     <div class="routeBox">
       <router-view />

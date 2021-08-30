@@ -21,6 +21,11 @@ const routes: Array<RouteConfig> = [
         name: "COM",
         component: () => import("E@/view/com/index.vue"),
       },
+      {
+        path: "task-tree",
+        name: "TaskTree",
+        component: () => import("E@/view/task-tree/index.vue"),
+      },
     ],
   },
 ];

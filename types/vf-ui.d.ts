@@ -2,6 +2,7 @@ import Vue from "vue";
 import { VFUIComponent } from "./component";
 
 import { VfAlert } from "./alert";
+import { VfTaskTree } from "./task-tree";
 
 // The version
 export const version: string;
@@ -18,3 +19,5 @@ export function install(vue: typeof Vue): void;
 export type Component = VFUIComponent;
 
 export class Alert extends VfAlert {}
+
+export class TaskTree extends VfTaskTree {}
