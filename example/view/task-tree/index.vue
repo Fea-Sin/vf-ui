@@ -40,7 +40,8 @@ export default Vue.extend({
           {
             title: "ZR任务3",
             expanded: false,
-            leaf: true,
+            leaf: false,
+            children: [],
           },
         ],
       },

@@ -12,6 +12,9 @@
         :key="child.title"
       />
     </ul>
+    <div class="folder-empty" v-else v-show="!folder.leaf && folder.expanded">
+      No Data
+    </div>
   </li>
 </template>
 <script lang="ts">

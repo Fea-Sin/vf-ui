@@ -3,6 +3,7 @@
     <div class="box">{{ title }}</div>
     <div class="box">ALERT</div>
     <div class="box">TASK-TREE</div>
+    <div class="box">MEDAL</div>
   </div>
 </template>
 <script lang="ts">
