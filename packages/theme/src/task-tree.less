@@ -13,6 +13,7 @@ ul li {
   width: 100%;
   font-size: 14px;
   color: @--task-tree-color;
+  overflow: hidden;
 
   li {
     line-height: 25px;
@@ -36,11 +37,12 @@ ul li {
 
   @--folder-margin-left: 5px;
 
-  @--horiz-path-width: 14px;
+  @--horiz-path-width: 12px;
   @--horiz-path-height: 6px;
   @--horiz-path-top: 8px;
-  @--horiz-leaf-path-left: -10px;
+  @--horiz-leaf-path-left: -8px;
   @--horiz-folder-path-left: @--horiz-leaf-path-left - @--folder-margin-left;
+  @--vertical-path-width: 10px;
 
   &.is-leaf {
     font-size: 14px;
@@ -55,6 +57,17 @@ ul li {
       width: @--horiz-path-width;
       height: @--horiz-path-height;
       border-bottom: 1px dashed #999;
+    }
+
+    & .title {
+      background-color: transparent !important;
+
+      .lcon {
+        .text {
+          margin-left: 10px;
+          padding-top: 2px;
+        }
+      }
     }
   }
   &.is-folder {
@@ -76,35 +89,58 @@ ul li {
       content: "";
       display: block;
       position: absolute;
-      width: 8px;
+      width: @--vertical-path-width;
       height: calc(100% - 32px);
-      top: 20px;
+      top: 21px;
       left: 0;
       border-right: 1px dashed #999;
+    }
+
+    & .title {
+      background-color: #f0eeec;
     }
   }
 
   & .title {
     .clearfix();
+    @--title-height: 25px;
+
+    height: @--title-height;
+    line-height: @--title-height;
 
     .lcon {
       display: inline-block;
       cursor: pointer;
       line-height: 1;
+      width: 50%;
 
       .decoration {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: 1px;
+        height: @--title-height;
+        padding-right: 5px;
+        background-color: #fff;
+        .medal {
+          margin-top: 4px;
+        }
       }
 
       .text {
         display: inline-block;
         vertical-align: -1px;
         margin-left: 5px;
+        height: @--title-height;
+        line-height: @--title-height;
+        vertical-align: 4px;
       }
     }
     .rcon {
       display: inline-block;
+      height: @--title-height;
+      line-height: 1;
+      width: 100px;
+      vertical-align: 9px;
+      // background-color: red;
     }
   }
 
