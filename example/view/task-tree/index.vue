@@ -27,21 +27,59 @@ export default Vue.extend({
           },
           {
             title: "ZR任务2",
+            expanded: false,
+            leaf: true,
+          },
+          {
+            title: "ZR文件夹2",
             expanded: true,
             leaf: false,
             children: [
               {
-                title: "ZR任务2子任务",
+                title: "ZR文件夹2子任务1",
+                expanded: false,
+                leaf: true,
+              },
+              {
+                title: "ZR文件夹2子任务2",
+                expanded: false,
+                leaf: false,
+                children: [
+                  {
+                    title: "Flink 任务",
+                    expanded: false,
+                    leaf: true,
+                  },
+                ],
+              },
+              {
+                title: "ZR文件夹2子任务3",
+                expanded: false,
+                leaf: true,
+              },
+              {
+                title: "ZR文件夹2子任务4",
                 expanded: false,
                 leaf: true,
               },
             ],
           },
           {
-            title: "ZR任务3",
+            title: "ZR文件夹3",
             expanded: false,
             leaf: false,
-            children: [],
+            children: [
+              {
+                title: "ZR文件夹3任务1",
+                expanded: false,
+                leaf: true,
+              },
+            ],
+          },
+          {
+            title: "ZR特殊任务",
+            expanded: false,
+            leaf: true,
           },
         ],
       },

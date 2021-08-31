@@ -1,4 +1,5 @@
 @import "./common/variable";
+@import "./common/mixins";
 
 @vftasktree: vf-task-tree;
 @vftaskfolder: vf-task-folder;
@@ -16,27 +17,95 @@ ul li {
   li {
     line-height: 25px;
   }
+  & > li::before {
+    display: none !important;
+  }
 
   .folder-empty {
     margin-left: @--task-tree-sub-folder-margin-left;
     margin-top: @--task-tree-sub-folder-margin-top;
+    font-weight: normal;
+    font-size: 14px;
   }
 }
 
 .@{vftaskfolder} {
   width: 100%;
   margin-top: 5px;
+  position: relative;
+
+  @--folder-margin-left: 5px;
+
+  @--horiz-path-width: 14px;
+  @--horiz-path-height: 6px;
+  @--horiz-path-top: 8px;
+  @--horiz-leaf-path-left: -10px;
+  @--horiz-folder-path-left: @--horiz-leaf-path-left - @--folder-margin-left;
 
   &.is-leaf {
     font-size: 14px;
+    font-weight: normal;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: @--horiz-path-top;
+      left: @--horiz-leaf-path-left;
+      width: @--horiz-path-width;
+      height: @--horiz-path-height;
+      border-bottom: 1px dashed #999;
+    }
   }
   &.is-folder {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: @--folder-margin-left;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: @--horiz-path-top;
+      left: @--horiz-folder-path-left;
+      width: @--horiz-path-width;
+      height: @--horiz-path-height;
+      border-bottom: 1px dashed #999;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 8px;
+      height: calc(100% - 32px);
+      top: 20px;
+      left: 0;
+      border-right: 1px dashed #999;
+    }
   }
 
   & .title {
-    font-size: 14px;
-    cursor: pointer;
+    .clearfix();
+
+    .lcon {
+      display: inline-block;
+      cursor: pointer;
+      line-height: 1;
+
+      .decoration {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .text {
+        display: inline-block;
+        vertical-align: -1px;
+        margin-left: 5px;
+      }
+    }
+    .rcon {
+      display: inline-block;
+    }
   }
 
   & .sub-folder {

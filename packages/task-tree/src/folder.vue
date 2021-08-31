@@ -1,6 +1,17 @@
 <template>
   <li class="vf-task-folder" :class="[folder.leaf ? 'is-leaf' : 'is-folder']">
-    <span @click="expand" class="title">{{ folder.title }}</span>
+    <div class="title">
+      <div class="lcon" @click="expand">
+        <div class="decoration" v-if="!folder.leaf">
+          <medal
+            :type="folder.expanded ? 'expand' : 'cross'"
+            :font-size="14"
+            color="#999"
+          />
+        </div>
+        <div class="text">{{ folder.title }}</div>
+      </div>
+    </div>
     <ul
       class="sub-folder"
       v-if="folder.children && folder.children.length > 0"
@@ -13,12 +24,14 @@
       />
     </ul>
     <div class="folder-empty" v-else v-show="!folder.leaf && folder.expanded">
-      No Data
+      暂无数据！
     </div>
   </li>
 </template>
 <script lang="ts">
 import Vue from "vue";
+import Medal from "../../medal";
+
 export default Vue.extend({
   name: "folder",
   props: {
@@ -26,6 +39,9 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+  },
+  components: {
+    Medal,
   },
   methods: {
     expand() {
