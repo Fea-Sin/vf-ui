@@ -6,6 +6,7 @@
 <script lang="ts">
 import Vue from "vue";
 import cross from "./type/cross.vue";
+import expand from "./type/expand.vue";
 
 export default Vue.extend({
   props: {
@@ -21,6 +22,7 @@ export default Vue.extend({
   },
   components: {
     cross,
+    expand,
   },
   computed: {
     medalStyle() {

@@ -1,11 +1,8 @@
 <template>
-  <div class="medal-type medal-cross">
+  <div class="medal-type medal-expand">
     <div class="out-path" :style="outStyle"></div>
     <div class="horizontal">
       <div class="path" :style="horizontalStyle"></div>
-    </div>
-    <div class="vertical">
-      <div class="path" :style="verticalStyle"></div>
     </div>
   </div>
 </template>
@@ -14,10 +11,10 @@ import Vue from "vue";
 import { getPathWidth } from "../../../utils/utils";
 
 export default Vue.extend({
-  name: "cross",
+  name: "expand",
   props: {
-    color: String,
     fontSize: Number,
+    color: String,
   },
   computed: {
     pathWidth() {
@@ -33,12 +30,6 @@ export default Vue.extend({
       return {
         backgroundColor: this.color,
         height: `${(this as any).pathWidth}px`,
-      };
-    },
-    verticalStyle() {
-      return {
-        backgroundColor: this.color,
-        width: `${(this as any).pathWidth}px`,
       };
     },
   },
