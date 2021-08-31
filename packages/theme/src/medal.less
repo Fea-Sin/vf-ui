@@ -1,0 +1,57 @@
+@import "./common/variable";
+
+@vfmedal: vf-medal;
+
+.@{vfmedal} {
+  width: 100%;
+  display: inline-block;
+  background-color: #fff;
+
+  .medal-type {
+    width: 100%;
+    height: 100%;
+  }
+  .medal-cross {
+    position: relative;
+    @--cover: 60%;
+
+    .out-path {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 10px solid #e3e2e1;
+    }
+    .horizontal {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+
+      .path {
+        width: @--cover;
+        height: 10px;
+        background-color: #e3e2e1;
+        margin: auto;
+      }
+    }
+    .vertical {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      .path {
+        height: @--cover;
+        width: 10px;
+        margin: auto;
+        background-color: #e3e2e1;
+      }
+    }
+  }
+}
