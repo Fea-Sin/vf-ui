@@ -7,8 +7,16 @@
 import Vue from "vue";
 import cross from "./type/cross.vue";
 import expand from "./type/expand.vue";
+import plus from "./type/plus.vue";
+import minus from "./type/minus.vue";
 
 export default Vue.extend({
+  components: {
+    cross,
+    expand,
+    plus,
+    minus,
+  },
   props: {
     type: {
       type: String,
@@ -19,10 +27,6 @@ export default Vue.extend({
       default: 16,
     },
     color: String,
-  },
-  components: {
-    cross,
-    expand,
   },
   computed: {
     medalStyle() {

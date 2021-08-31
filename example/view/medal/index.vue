@@ -11,6 +11,16 @@
         <medal type="expand" class="medal" :font-size="80" color="#545454" />
       </div>
     </div>
+    <div class="box">
+      <div class="cell">
+        <medal type="plus" class="medal" :font-size="80" color="#545454" />
+      </div>
+    </div>
+    <div class="box">
+      <div class="cell">
+        <medal type="minus" class="medal" :font-size="80" color="#545454" />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
