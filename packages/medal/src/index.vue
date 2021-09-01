@@ -9,6 +9,7 @@ import cross from "./type/cross.vue";
 import expand from "./type/expand.vue";
 import plus from "./type/plus.vue";
 import minus from "./type/minus.vue";
+import editor from "./type/editor.vue";
 
 export default Vue.extend({
   components: {
@@ -16,6 +17,7 @@ export default Vue.extend({
     expand,
     plus,
     minus,
+    editor,
   },
   props: {
     type: {
