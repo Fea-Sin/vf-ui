@@ -25,6 +25,7 @@ ul li {
   .folder-empty {
     margin-left: @--task-tree-sub-folder-margin-left;
     margin-top: @--task-tree-sub-folder-margin-top;
+    margin-bottom: @--task-tree-sub-folder-margin-bottom;
     font-weight: normal;
     font-size: 14px;
   }
@@ -102,46 +103,69 @@ ul li {
   }
 
   & .title {
-    .clearfix();
     @--title-height: 25px;
+
+    .clearfix();
+    margin: 15px 0;
 
     height: @--title-height;
     line-height: @--title-height;
 
     .lcon {
-      display: inline-block;
+      display: block;
       cursor: pointer;
       line-height: 1;
       width: 50%;
+      float: left;
+      .clearfix();
+
+      &.leaf {
+        width: auto;
+        margin-right: 8px;
+      }
 
       .decoration {
-        display: inline-block;
-        vertical-align: 1px;
+        display: block;
         height: @--title-height;
         padding-right: 5px;
         background-color: #fff;
+        float: left;
         .medal {
           margin-top: 4px;
         }
       }
 
       .text {
-        display: inline-block;
-        vertical-align: -1px;
+        display: block;
         margin-left: 5px;
         height: @--title-height;
         line-height: @--title-height;
-        vertical-align: 4px;
+        float: left;
       }
     }
     .rcon {
-      display: inline-block;
       height: @--title-height;
       line-height: @--title-height;
       line-height: 1;
-      width: 100px;
-      vertical-align: 9px;
-      // background-color: red;
+      display: block;
+      width: 150px;
+      float: left;
+      .clearfix();
+
+      .cell {
+        height: 100%;
+        float: left;
+        padding: 0 6px;
+      }
+      .hover {
+        cursor: pointer;
+        &:hover {
+          background-color: #e3e2e1;
+        }
+      }
+      .padding {
+        padding-top: 2px;
+      }
     }
   }
 
@@ -149,5 +173,6 @@ ul li {
     font-size: 14px;
     margin-left: @--task-tree-sub-folder-margin-left;
     margin-top: @--task-tree-sub-folder-margin-top;
+    margin-bottom: @--task-tree-sub-folder-margin-bottom;
   }
 }

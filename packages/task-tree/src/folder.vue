@@ -1,7 +1,7 @@
 <template>
   <li class="vf-task-folder" :class="[folder.leaf ? 'is-leaf' : 'is-folder']">
     <div class="title">
-      <div class="lcon" @click="expand">
+      <div :class="['lcon', folder.leaf ? 'leaf' : 'folder']" @click="expand">
         <div class="decoration" v-if="!folder.leaf">
           <medal
             :type="folder.expanded ? 'expand' : 'cross'"
@@ -14,8 +14,16 @@
           {{ folder.title }}
         </div>
       </div>
-      <div class="rcon" v-if="!folder.leaf">
-        <span>444</span>
+      <div class="rcon">
+        <div class="cell hover">
+          <medal type="editor" :font-size="28" color="#545454" />
+        </div>
+        <div class="cell hover padding">
+          <medal type="minus" :font-size="20" color="#545454" />
+        </div>
+        <div class="cell hover padding" v-if="!folder.leaf">
+          <medal type="plus" :font-size="20" color="#545454" />
+        </div>
       </div>
     </div>
     <ul
