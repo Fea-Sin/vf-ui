@@ -11,7 +11,18 @@
           />
         </div>
         <div class="text" @click="() => taskRun(folder)">
-          {{ folder.title }}
+          <span v-if="folder.leaf">
+            <medal
+              type="status"
+              :text="folder.status"
+              color="#fff"
+              :font-size="18"
+              :medal-config="{
+                bgColor: folder.status === 'S' ? 'rgb(82, 228, 68)' : '#0fa8ce',
+              }"
+            />
+          </span>
+          <span>{{ folder.title }}</span>
         </div>
       </div>
       <div class="rcon">

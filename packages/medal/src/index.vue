@@ -1,6 +1,12 @@
 <template>
   <div class="vf-medal" :style="medalStyle">
-    <component :is="type" :color="color" :fontSize="fontSize"></component>
+    <component
+      :is="type"
+      :color="color"
+      :fontSize="fontSize"
+      :text="text"
+      :medalConfig="medalConfig"
+    ></component>
   </div>
 </template>
 <script lang="ts">
@@ -10,6 +16,7 @@ import expand from "./type/expand.vue";
 import plus from "./type/plus.vue";
 import minus from "./type/minus.vue";
 import editor from "./type/editor.vue";
+import status from "./type/status.vue";
 
 export default Vue.extend({
   components: {
@@ -18,6 +25,7 @@ export default Vue.extend({
     plus,
     minus,
     editor,
+    status,
   },
   props: {
     type: {
@@ -29,6 +37,8 @@ export default Vue.extend({
       default: 16,
     },
     color: String,
+    text: String,
+    medalConfig: Object,
   },
   computed: {
     medalStyle() {

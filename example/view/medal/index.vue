@@ -26,6 +26,47 @@
         <medal type="editor" class="medal" :font-size="120" color="#0fa8ce" />
       </div>
     </div>
+    <div class="box">
+      <div class="cell">
+        <medal type="status" class="medal" :font-size="80" />
+      </div>
+    </div>
+    <div class="box">
+      <div class="cell">
+        <medal
+          type="status"
+          class="medal"
+          :font-size="80"
+          text="极"
+          color="#fff"
+          :medal-config="medalA"
+        />
+      </div>
+    </div>
+    <div class="box">
+      <div class="cell">
+        <medal
+          type="status"
+          class="medal"
+          :font-size="80"
+          color="#fff"
+          :medal-config="medalA"
+          text="S"
+        />
+      </div>
+    </div>
+    <div class="box">
+      <div class="cell">
+        <medal
+          type="status"
+          class="medal"
+          :font-size="80"
+          color="#fff"
+          :medal-config="medalB"
+          text="F"
+        />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -35,6 +76,16 @@ import { Medal } from "@/index";
 export default Vue.extend({
   components: {
     Medal,
+  },
+  data() {
+    return {
+      medalA: {
+        bgColor: "#0fa8ce",
+      },
+      medalB: {
+        bgColor: "rgb(82, 228, 68)",
+      },
+    };
   },
 });
 </script>
