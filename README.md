@@ -35,8 +35,6 @@ npm run dev
 
 - VfAlert
 
-## Compiles and minifies for production
+- VfTaskTree
 
-```
-npm run build
-```
+- VfMedal

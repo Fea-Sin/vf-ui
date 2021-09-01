@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6 / 2021-09-01
+
+VF TaskTree Medal is done
+
 ## 1.1.5 / 2021-08-26
 
 VF-UI Alert is done

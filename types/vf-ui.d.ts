@@ -3,6 +3,7 @@ import { VFUIComponent } from "./component";
 
 import { VfAlert } from "./alert";
 import { VfTaskTree } from "./task-tree";
+import { VfMedal } from "./medal";
 
 // The version
 export const version: string;
@@ -21,3 +22,5 @@ export type Component = VFUIComponent;
 export class Alert extends VfAlert {}
 
 export class TaskTree extends VfTaskTree {}
+
+export class Medal extends VfMedal {}
