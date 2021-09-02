@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.7 / 2021-09-02
+
+TaskTree add detail and docs
+
 ## 1.1.6 / 2021-09-01
 
 VF TaskTree Medal is done

@@ -5,7 +5,13 @@
     <div class="box">无限任务</div>
     <div class="box">无限状态</div>
     <div class="box-task">
-      <task-tree :tasks="tasks" />
+      <task-tree
+        :tasks="tasks"
+        :on-click="taskClick"
+        :on-change="taskChange"
+        :on-remove="taskRemove"
+        :on-add="taskAdd"
+      />
     </div>
   </div>
 </template>
@@ -27,7 +33,6 @@ export default Vue.extend({
             title: "ZR任务1",
             expanded: false,
             leaf: true,
-            status: "F",
           },
           {
             title: "ZR任务2",
@@ -63,7 +68,6 @@ export default Vue.extend({
                 title: "ZR文件夹2子任务3",
                 expanded: false,
                 leaf: true,
-                status: "A",
               },
               {
                 title: "ZR文件夹2子任务4",
@@ -82,7 +86,6 @@ export default Vue.extend({
                 title: "ZR文件夹3任务1",
                 expanded: false,
                 leaf: true,
-                status: "F",
               },
             ],
           },
@@ -90,11 +93,24 @@ export default Vue.extend({
             title: "ZR特殊任务",
             expanded: false,
             leaf: true,
-            status: "K",
           },
         ],
       },
     };
+  },
+  methods: {
+    taskClick(task: any) {
+      console.log("任务click---->", task);
+    },
+    taskChange(task: any) {
+      console.log("任务change---->", task);
+    },
+    taskRemove(task: any) {
+      console.log("任务remove--->", task);
+    },
+    taskAdd(task: any) {
+      console.log("任务add--->", task);
+    },
   },
 });
 </script>

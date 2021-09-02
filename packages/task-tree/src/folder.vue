@@ -1,6 +1,6 @@
 <template>
   <li class="vf-task-folder" :class="[folder.leaf ? 'is-leaf' : 'is-folder']">
-    <div class="title">
+    <div class="vf-task-title">
       <div :class="['lcon', folder.leaf ? 'leaf' : 'folder']" @click="expand">
         <div class="decoration" v-if="!folder.leaf">
           <medal
@@ -10,8 +10,8 @@
             class="medal"
           />
         </div>
-        <div class="text" @click="() => taskRun(folder)">
-          <span v-if="folder.leaf">
+        <div class="vf-task-text" @click="() => taskRun(folder)">
+          <span v-if="folder.leaf && folder.status" class="vf-task-status">
             <medal
               type="status"
               :text="folder.status"
@@ -26,13 +26,17 @@
         </div>
       </div>
       <div class="rcon">
-        <div class="cell hover">
+        <div class="cell hover" @click="() => taskChange(folder)">
           <medal type="editor" :font-size="28" color="#545454" />
         </div>
-        <div class="cell hover padding">
+        <div class="cell hover padding" @click="() => taskRemove(folder)">
           <medal type="minus" :font-size="20" color="#545454" />
         </div>
-        <div class="cell hover padding" v-if="!folder.leaf">
+        <div
+          class="cell hover padding"
+          v-if="!folder.leaf"
+          @click="() => taskAdd(folder)"
+        >
           <medal type="plus" :font-size="20" color="#545454" />
         </div>
       </div>
@@ -46,6 +50,10 @@
         v-for="child in folder.children"
         :folder="child"
         :key="child.title"
+        :on-click="onClick"
+        :on-change="onChange"
+        :on-add="onAdd"
+        :on-remove="onRemove"
       />
     </ul>
     <div class="folder-empty" v-else v-show="!folder.leaf && folder.expanded">
@@ -65,6 +73,10 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+    onClick: Function,
+    onChange: Function,
+    onAdd: Function,
+    onRemove: Function,
   },
   components: {
     Medal,
@@ -77,7 +89,24 @@ export default Vue.extend({
       this.folder.expanded = !this.folder.expanded;
     },
     taskRun(task: ITaskItem): void {
-      console.log("当前任务--->", task);
+      if (this.onClick) {
+        this.onClick(task);
+      }
+    },
+    taskChange(task: ITaskItem) {
+      if (this.onChange) {
+        this.onChange(task);
+      }
+    },
+    taskRemove(task: ITaskItem) {
+      if (this.onRemove) {
+        this.onRemove(task);
+      }
+    },
+    taskAdd(task: ITaskItem) {
+      if (this.onAdd) {
+        this.onAdd(task);
+      }
     },
   },
 });

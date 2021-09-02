@@ -1,6 +1,12 @@
 <template>
   <ul class="vf-task-tree">
-    <folder :folder="tasks" />
+    <folder
+      :folder="tasks"
+      :on-click="onClick"
+      :on-change="onChange"
+      :on-add="onAdd"
+      :on-remove="onRemove"
+    />
   </ul>
 </template>
 <script lang="ts">
@@ -14,6 +20,10 @@ export default Vue.extend({
       type: Object,
       required: true,
     },
+    onClick: Function,
+    onChange: Function,
+    onAdd: Function,
+    onRemove: Function,
   },
   components: {
     folder,

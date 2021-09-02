@@ -31,10 +31,31 @@ npm install
 npm run dev
 ```
 
+## How to use
+
+```
+npm install --save vf-vue-ui
+```
+
+```js
+import Vue from "vue";
+import VFUI from "vf-vue-ui";
+import "vf-vue-ui/lib/theme/index.css";
+
+// 安装组件
+Vue.use(VFUI);
+```
+
 ## 主要功能
 
-- VfAlert
+- [vf-alert](./packages/alert/docs/info.md)
 
-- VfTaskTree
+- [vf-task-tree](./packages/task-tree/docs/info.md)
 
 - VfMedal
+
+## 组件展示
+
+- vf-task-tree
+
+![vf-task-tree](./packages/task-tree/docs/image/vf-task-tree.png)

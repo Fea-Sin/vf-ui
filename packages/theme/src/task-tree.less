@@ -3,6 +3,7 @@
 
 @vftasktree: vf-task-tree;
 @vftaskfolder: vf-task-folder;
+@vftask: vf-task;
 
 ul,
 ul li {
@@ -60,11 +61,11 @@ ul li {
       border-bottom: 1px dashed #999;
     }
 
-    & .title {
+    & .@{vftask}-title {
       background-color: transparent !important;
 
       .lcon {
-        .text {
+        .@{vftask}-text {
           margin-left: 10px;
           padding-top: 2px;
         }
@@ -97,12 +98,12 @@ ul li {
       border-right: 1px dashed #999;
     }
 
-    & .title {
+    & .@{vftask}-title {
       background-color: #f0eeec;
     }
   }
 
-  & .title {
+  & .@{vftask}-title {
     @--title-height: 25px;
 
     .clearfix();
@@ -135,12 +136,16 @@ ul li {
         }
       }
 
-      .text {
+      .@{vftask}-text {
         display: block;
         margin-left: 5px;
         height: @--title-height;
         line-height: @--title-height;
         float: left;
+
+        .@{vftask}-status {
+          margin-right: 5px;
+        }
       }
     }
     .rcon {
