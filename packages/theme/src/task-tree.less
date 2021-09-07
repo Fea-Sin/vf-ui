@@ -5,6 +5,12 @@
 @vftaskfolder: vf-task-folder;
 @vftask: vf-task;
 
+@--task-tree-margin-large: 15px;
+@--task-tree-margin-default: 10px;
+@--task-tree-margin-small: 5px;
+
+@--task-tree-sub-folder-margin-left: 18px;
+
 ul,
 ul li {
   list-style-type: none;
@@ -24,8 +30,8 @@ ul li {
 
   .folder-empty {
     margin-left: @--task-tree-sub-folder-margin-left;
-    margin-top: @--task-tree-sub-folder-margin-top;
-    margin-bottom: @--task-tree-sub-folder-margin-bottom;
+    margin-top: @--task-tree-margin-default;
+    margin-bottom: @--task-tree-margin-default;
     font-weight: normal;
   }
 }
@@ -90,20 +96,52 @@ ul li {
       width: @--vertical-path-width;
       height: calc(100% - 32px);
       top: 21px;
-      left: 0;
+      left: -1px;
       border-right: 1px dashed #999;
     }
 
     & .@{vftask}-title {
       background-color: #f0eeec;
     }
+
+    &.vf-small-task {
+      &::after {
+        left: -2px;
+      }
+    }
+    &.vf-large-task {
+      &::after {
+        left: 0;
+      }
+    }
   }
 
-  & .@{vftask}-title {
+  &.vf-small-task {
+    .@{vftask}-title {
+      margin: @--task-tree-margin-small 0;
+    }
+
+    .sub-folder {
+      margin-top: @--task-tree-margin-small;
+      margin-bottom: @--task-tree-margin-small;
+    }
+  }
+  &.vf-large-task {
+    .@{vftask}-title {
+      margin: @--task-tree-margin-large 0;
+    }
+
+    .sub-folder {
+      margin-top: @--task-tree-margin-large;
+      margin-bottom: @--task-tree-margin-large;
+    }
+  }
+
+  .@{vftask}-title {
     @--title-height: 25px;
 
     .clearfix();
-    margin: 15px 0;
+    margin: @--task-tree-margin-default 0;
 
     height: @--title-height;
     line-height: @--title-height;
@@ -112,12 +150,13 @@ ul li {
       display: block;
       cursor: pointer;
       line-height: 1;
-      width: 50%;
+      width: calc(100% - 120px);
       float: left;
       .clearfix();
 
       &.leaf {
-        width: auto;
+        // width: auto;
+        max-width: calc(100% - 120px);
         margin-right: 8px;
       }
 
@@ -133,8 +172,7 @@ ul li {
       }
 
       .@{vftask}-text {
-        display: block;
-        margin-left: 5px;
+        padding-left: 5px;
         height: @--title-height;
         line-height: @--title-height;
         float: left;
@@ -143,15 +181,27 @@ ul li {
           margin-right: 5px;
         }
       }
+      .@{vftask}-text.folder-text {
+        .textOverflow();
+        max-width: calc(100% - 30px);
+      }
+      .@{vftask}-text.leaf-text {
+        .textOverflow();
+        max-width: calc(100% - 30px);
+      }
     }
     .rcon {
       height: @--title-height;
       line-height: @--title-height;
       line-height: 1;
       display: block;
-      width: 150px;
+      width: 110px;
       float: left;
       .clearfix();
+
+      &.leaf {
+        width: 80px;
+      }
 
       .cell {
         height: 100%;
@@ -170,9 +220,9 @@ ul li {
     }
   }
 
-  & .sub-folder {
+  .sub-folder {
     margin-left: @--task-tree-sub-folder-margin-left;
-    margin-top: @--task-tree-sub-folder-margin-top;
-    margin-bottom: @--task-tree-sub-folder-margin-bottom;
+    margin-top: @--task-tree-margin-default;
+    margin-bottom: @--task-tree-margin-default;
   }
 }

@@ -1,5 +1,8 @@
 <template>
-  <li class="vf-task-folder" :class="[folder.leaf ? 'is-leaf' : 'is-folder']">
+  <li
+    class="vf-task-folder"
+    :class="[folder.leaf ? 'is-leaf' : 'is-folder', `vf-${size}-task`]"
+  >
     <div class="vf-task-title">
       <div :class="['lcon', folder.leaf ? 'leaf' : 'folder']" @click="expand">
         <div class="decoration" v-if="!folder.leaf">
@@ -10,7 +13,10 @@
             class="medal"
           />
         </div>
-        <div class="vf-task-text" @click="() => taskRun(folder)">
+        <div
+          :class="['vf-task-text', folder.leaf ? 'leaf-text' : 'folder-text']"
+          @click="() => taskRun(folder)"
+        >
           <span v-if="folder.leaf && folder.status" class="vf-task-status">
             <medal
               type="status"
@@ -22,10 +28,12 @@
               }"
             />
           </span>
-          <span>{{ folder.title }}</span>
+          <span class="vf-task-textspan" :style="titleStyle(folder.leaf)">
+            {{ folder.title }}
+          </span>
         </div>
       </div>
-      <div class="rcon">
+      <div :class="['rcon', folder.leaf ? 'leaf' : 'folder']">
         <div class="cell hover" @click="() => taskChange(folder)">
           <medal type="editor" :font-size="iconSize.BP" color="#545454" />
         </div>
@@ -42,7 +50,7 @@
       </div>
     </div>
     <ul
-      class="sub-folder"
+      :class="['sub-folder']"
       v-if="folder.children && folder.children.length > 0"
       v-show="folder.expanded"
     >
@@ -54,6 +62,7 @@
         :on-change="onChange"
         :on-add="onAdd"
         :on-remove="onRemove"
+        :size="size"
       />
     </ul>
     <div class="folder-empty" v-else v-show="!folder.leaf && folder.expanded">
@@ -77,10 +86,7 @@ export default Vue.extend({
     onChange: Function,
     onAdd: Function,
     onRemove: Function,
-    size: {
-      type: String,
-      default: "default",
-    },
+    size: String,
   },
   components: {
     Medal,
@@ -96,10 +102,10 @@ export default Vue.extend({
         };
       } else if (this.size === "small") {
         return {
-          D: 18,
-          S: 18,
-          P: 20,
-          BP: 28,
+          D: 14,
+          S: 14,
+          P: 16,
+          BP: 24,
         };
       } else {
         return {

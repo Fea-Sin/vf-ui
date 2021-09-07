@@ -6,6 +6,7 @@
       :on-change="onChange"
       :on-add="onAdd"
       :on-remove="onRemove"
+      :size="size"
     />
   </ul>
 </template>

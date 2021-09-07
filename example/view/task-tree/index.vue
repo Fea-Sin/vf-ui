@@ -25,18 +25,18 @@ export default Vue.extend({
   data() {
     return {
       tasks: {
-        title: "ZR文件夹555555666",
+        title: "ZR文件夹55555566689898",
         leaf: false,
         expanded: true,
         created: true,
         children: [
           {
-            title: "ZR任务1",
+            title: "ZR任务1989898989897",
             expanded: false,
             leaf: true,
           },
           {
-            title: "ZR任务2",
+            title: "ZR任务2898989898990",
             expanded: false,
             leaf: true,
             status: "S",
@@ -111,7 +111,7 @@ export default Vue.extend({
 }
 .box-task {
   padding-left: 10px;
-  width: 400px;
+  width: 350px;
   background-color: #f2f2f2;
 }
 </style>
