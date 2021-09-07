@@ -12,7 +12,6 @@ ul li {
 
 .@{vftasktree} {
   width: 100%;
-  font-size: 14px;
   color: @--task-tree-color;
   overflow: hidden;
 
@@ -28,7 +27,6 @@ ul li {
     margin-top: @--task-tree-sub-folder-margin-top;
     margin-bottom: @--task-tree-sub-folder-margin-bottom;
     font-weight: normal;
-    font-size: 14px;
   }
 }
 
@@ -47,7 +45,6 @@ ul li {
   @--vertical-path-width: 10px;
 
   &.is-leaf {
-    font-size: 14px;
     font-weight: normal;
 
     &::before {
@@ -73,7 +70,6 @@ ul li {
     }
   }
   &.is-folder {
-    font-size: 16px;
     font-weight: bold;
     margin-left: @--folder-margin-left;
 
@@ -129,7 +125,7 @@ ul li {
         display: block;
         height: @--title-height;
         padding-right: 5px;
-        background-color: #fff;
+
         float: left;
         .medal {
           margin-top: 4px;
@@ -175,7 +171,6 @@ ul li {
   }
 
   & .sub-folder {
-    font-size: 14px;
     margin-left: @--task-tree-sub-folder-margin-left;
     margin-top: @--task-tree-sub-folder-margin-top;
     margin-bottom: @--task-tree-sub-folder-margin-bottom;

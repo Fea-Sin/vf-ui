@@ -24,6 +24,10 @@ export default Vue.extend({
     onChange: Function,
     onAdd: Function,
     onRemove: Function,
+    size: {
+      type: String,
+      default: "default",
+    },
   },
   components: {
     folder,

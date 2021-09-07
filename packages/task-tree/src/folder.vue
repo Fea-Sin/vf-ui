@@ -5,7 +5,7 @@
         <div class="decoration" v-if="!folder.leaf">
           <medal
             :type="folder.expanded ? 'expand' : 'cross'"
-            :font-size="18"
+            :font-size="iconSize.D"
             color="#999"
             class="medal"
           />
@@ -16,7 +16,7 @@
               type="status"
               :text="folder.status"
               color="#fff"
-              :font-size="18"
+              :font-size="iconSize.S"
               :medal-config="{
                 bgColor: folder.status === 'S' ? 'rgb(82, 228, 68)' : '#0fa8ce',
               }"
@@ -27,17 +27,17 @@
       </div>
       <div class="rcon">
         <div class="cell hover" @click="() => taskChange(folder)">
-          <medal type="editor" :font-size="28" color="#545454" />
+          <medal type="editor" :font-size="iconSize.BP" color="#545454" />
         </div>
         <div class="cell hover padding" @click="() => taskRemove(folder)">
-          <medal type="minus" :font-size="20" color="#545454" />
+          <medal type="minus" :font-size="iconSize.P" color="#545454" />
         </div>
         <div
           class="cell hover padding"
-          v-if="!folder.leaf"
+          v-if="!folder.leaf && folder.created"
           @click="() => taskAdd(folder)"
         >
-          <medal type="plus" :font-size="20" color="#545454" />
+          <medal type="plus" :font-size="iconSize.P" color="#545454" />
         </div>
       </div>
     </div>
@@ -77,9 +77,39 @@ export default Vue.extend({
     onChange: Function,
     onAdd: Function,
     onRemove: Function,
+    size: {
+      type: String,
+      default: "default",
+    },
   },
   components: {
     Medal,
+  },
+  computed: {
+    iconSize() {
+      if (this.size === "large") {
+        return {
+          D: 18,
+          S: 18,
+          P: 20,
+          BP: 28,
+        };
+      } else if (this.size === "small") {
+        return {
+          D: 18,
+          S: 18,
+          P: 20,
+          BP: 28,
+        };
+      } else {
+        return {
+          D: 16,
+          S: 16,
+          P: 18,
+          BP: 26,
+        };
+      }
+    },
   },
   methods: {
     expand() {
@@ -87,6 +117,18 @@ export default Vue.extend({
         return;
       }
       this.folder.expanded = !this.folder.expanded;
+    },
+    titleStyle(leaf: boolean) {
+      const size = this.size === "large" ? 18 : this.size === "small" ? 14 : 16;
+      if (leaf) {
+        return {
+          fontSize: `${size - 2}px`,
+        };
+      } else {
+        return {
+          fontSize: `${size}px`,
+        };
+      }
     },
     taskRun(task: ITaskItem): void {
       if (this.onClick) {

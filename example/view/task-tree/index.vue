@@ -25,9 +25,10 @@ export default Vue.extend({
   data() {
     return {
       tasks: {
-        title: "ZR文件夹",
+        title: "ZR文件夹555555666",
         leaf: false,
         expanded: true,
+        created: true,
         children: [
           {
             title: "ZR任务1",
@@ -42,27 +43,15 @@ export default Vue.extend({
           },
           {
             title: "ZR文件夹2",
-            expanded: true,
+            expanded: false,
             leaf: false,
+            created: true,
             children: [
               {
                 title: "ZR文件夹2子任务1",
                 expanded: false,
                 leaf: true,
                 status: "S",
-              },
-              {
-                title: "ZR文件夹2子任务2",
-                expanded: false,
-                leaf: false,
-                children: [
-                  {
-                    title: "Flink 任务",
-                    expanded: false,
-                    leaf: true,
-                    status: "F",
-                  },
-                ],
               },
               {
                 title: "ZR文件夹2子任务3",
@@ -81,6 +70,7 @@ export default Vue.extend({
             title: "ZR文件夹3",
             expanded: false,
             leaf: false,
+            created: true,
             children: [
               {
                 title: "ZR文件夹3任务1",
@@ -121,6 +111,7 @@ export default Vue.extend({
 }
 .box-task {
   padding-left: 10px;
-  width: 450px;
+  width: 400px;
+  background-color: #f2f2f2;
 }
 </style>
