@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.8 / 2021-09-07
+
+TaskTree size setting
+
 ## 1.1.7 / 2021-09-02
 
 TaskTree add detail and docs

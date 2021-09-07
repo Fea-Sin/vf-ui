@@ -11,12 +11,15 @@ interface Itasks {
   leaf: boolean;
   children: Array<Itasks>;
 }
+
+type ISize = "large" | "default" | "small";
 ```
 
-| api      | type                   | description | 默认值 |
-| -------- | ---------------------- | ----------- | ------ |
-| tasks    | Itasks                 | 分层数据    | -      |
-| onClick  | (task: Itasks) => void | 点击事件    | -      |
-| onChange | (task: Itasks) => void | 修改事件    | -      |
-| onRemove | (task: Itasks) => void | 删除事件    | -      |
-| onAdd    | (task: Itasks) => void | 增加事件    | -      |
+| api      | type                   | description  | 默认值    |
+| -------- | ---------------------- | ------------ | --------- |
+| tasks    | Itasks                 | 分层数据     | -         |
+| onClick  | (task: Itasks) => void | 点击事件     | -         |
+| onChange | (task: Itasks) => void | 修改事件     | -         |
+| onRemove | (task: Itasks) => void | 删除事件     | -         |
+| onAdd    | (task: Itasks) => void | 增加事件     | -         |
+| size     | ISize                  | 格式大小配置 | `default` |
