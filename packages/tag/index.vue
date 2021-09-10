@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Tag>标签</Tag>
-  </div>
+  <Tag v-on="$listeners" v-bind="[$props, $attrs]">
+    <slot name="default" />
+  </Tag>
 </template>
 <script lang="ts">
 import Vue from "vue";
