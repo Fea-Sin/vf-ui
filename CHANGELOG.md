@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.9 / 2021-09-10
+
+element-ui Tag, VfTag
+
 ## 1.1.8 / 2021-09-07
 
 TaskTree size setting
