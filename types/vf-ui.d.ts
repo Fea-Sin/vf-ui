@@ -5,6 +5,7 @@ import { VfAlert } from "./alert";
 import { VfTaskTree } from "./task-tree";
 import { VfMedal } from "./medal";
 import { VfTag } from "./tag";
+import { VfIcon } from "./icon";
 
 // The version
 export const version: string;
@@ -27,3 +28,5 @@ export class TaskTree extends VfTaskTree {}
 export class Medal extends VfMedal {}
 
 export class Tag extends VfTag {}
+
+export class Icon extends VfIcon {}

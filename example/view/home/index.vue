@@ -4,6 +4,8 @@
     <div class="box">ALERT</div>
     <div class="box">TASK-TREE</div>
     <div class="box">MEDAL</div>
+    <div class="box">TAG</div>
+    <div class="box">ICON</div>
   </div>
 </template>
 <script lang="ts">

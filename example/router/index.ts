@@ -36,6 +36,11 @@ const routes: Array<RouteConfig> = [
         name: "Tag",
         component: () => import("E@/view/tag/index.vue"),
       },
+      {
+        path: "icon",
+        name: "Icon",
+        component: () => import("E@/view/icon/index.vue"),
+      },
     ],
   },
 ];

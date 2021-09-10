@@ -1,8 +1,12 @@
 # Changelog
 
+## 1.2.0 / 2021-09-10
+
+add element-ui Icon, VfIcon
+
 ## 1.1.9 / 2021-09-10
 
-element-ui Tag, VfTag
+add element-ui Tag, VfTag
 
 ## 1.1.8 / 2021-09-07
 

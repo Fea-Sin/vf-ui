@@ -3,5 +3,6 @@
   "alert": "./packages/alert/index.ts",
   "task-tree": "./packages/task-tree/index.ts",
   "medal": "./packages/medal/index.ts",
-  "tag": "./packages/tag/index.ts"
+  "tag": "./packages/tag/index.ts",
+  "icon": "./packages/icon/index.ts"
 }
