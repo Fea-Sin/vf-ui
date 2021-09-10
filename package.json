@@ -79,6 +79,7 @@
     ]
   },
   "dependencies": {
+    "element-ui": "^2.15.1",
     "vue": "^2.6.12"
   }
 }

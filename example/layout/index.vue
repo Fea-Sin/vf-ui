@@ -6,6 +6,7 @@
       <router-link to="/com" class="box">ALERT</router-link>
       <router-link to="/task-tree" class="box">TASK-TREE</router-link>
       <router-link to="/medal" class="box">MEDAL</router-link>
+      <router-link to="/tag" class="box">TAG</router-link>
     </div>
     <div class="routeBox">
       <router-view />

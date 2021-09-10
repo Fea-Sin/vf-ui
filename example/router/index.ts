@@ -31,6 +31,11 @@ const routes: Array<RouteConfig> = [
         name: "Medal",
         component: () => import("E@/view/medal/index.vue"),
       },
+      {
+        path: "tag",
+        name: "Tag",
+        component: () => import("E@/view/tag/index.vue"),
+      },
     ],
   },
 ];
