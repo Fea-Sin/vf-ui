@@ -24,16 +24,11 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import Tag from "../../../packages/tag/index.vue";
+import { Tag } from "@/index";
 
 export default Vue.extend({
   components: {
     Tag,
-  },
-  data() {
-    return {
-      tags: [],
-    };
   },
   methods: {
     handleClick() {

@@ -2,5 +2,6 @@
   "index": "./src/index.ts",
   "alert": "./packages/alert/index.ts",
   "task-tree": "./packages/task-tree/index.ts",
-  "medal": "./packages/medal/index.ts"
+  "medal": "./packages/medal/index.ts",
+  "tag": "./packages/tag/index.ts"
 }
