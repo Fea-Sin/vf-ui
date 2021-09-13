@@ -9,6 +9,7 @@
       <router-link to="/tag" class="box">TAG</router-link>
       <router-link to="/icon" class="box">ICON</router-link>
       <router-link to="/input" class="box">INPUT</router-link>
+      <router-link to="/button" class="box">BUTTON</router-link>
     </div>
     <div class="routeBox">
       <router-view />

@@ -1,7 +1,6 @@
 const { merge } = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.config");
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(webpackBaseConfig, {
@@ -26,7 +25,6 @@ module.exports = merge(webpackBaseConfig, {
     port: 5090,
     overlay: true,
     stats: "errors-only",
-    // host: "127.0.0.1",
   },
   plugins: [
     new HtmlWebpackPlugin({

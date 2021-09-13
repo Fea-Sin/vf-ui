@@ -6,6 +6,8 @@
     <div class="box">MEDAL</div>
     <div class="box">TAG</div>
     <div class="box">ICON</div>
+    <div class="box">INPUT</div>
+    <div class="box">BUTTON</div>
   </div>
 </template>
 <script lang="ts">

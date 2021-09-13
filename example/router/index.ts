@@ -46,6 +46,11 @@ const routes: Array<RouteConfig> = [
         name: "Input",
         component: () => import("E@/view/input/index.vue"),
       },
+      {
+        path: "button",
+        name: "Button",
+        component: () => import("E@/view/button/index.vue"),
+      },
     ],
   },
 ];

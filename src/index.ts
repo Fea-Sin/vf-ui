@@ -4,6 +4,7 @@ import VfMedal, { MedalName } from "../packages/medal";
 import VfTag, { TagName } from "../packages/tag";
 import VfIcon, { IconName } from "../packages/icon";
 import VfInput, { InputName } from "../packages/input";
+import VfButton, { ButtonName } from "../packages/button";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -13,6 +14,7 @@ const components = [
   [TagName, VfTag],
   [IconName, VfIcon],
   [InputName, VfInput],
+  [ButtonName, VfButton],
 ];
 
 const install = function (Vue: any) {
@@ -32,6 +34,7 @@ export const Medal = VfMedal;
 export const Tag = VfTag;
 export const Icon = VfIcon;
 export const Input = VfInput;
+export const Button = VfButton;
 
 export default {
   install,
@@ -42,4 +45,5 @@ export default {
   VfTag,
   VfIcon,
   VfInput,
+  VfButton,
 };
