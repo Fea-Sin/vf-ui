@@ -41,6 +41,11 @@ const routes: Array<RouteConfig> = [
         name: "Icon",
         component: () => import("E@/view/icon/index.vue"),
       },
+      {
+        path: "input",
+        name: "Input",
+        component: () => import("E@/view/input/index.vue"),
+      },
     ],
   },
 ];

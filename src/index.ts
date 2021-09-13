@@ -3,6 +3,7 @@ import VfTaskTree, { TaskTreeName } from "../packages/task-tree";
 import VfMedal, { MedalName } from "../packages/medal";
 import VfTag, { TagName } from "../packages/tag";
 import VfIcon, { IconName } from "../packages/icon";
+import VfInput, { InputName } from "../packages/input";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -11,6 +12,7 @@ const components = [
   [MedalName, VfMedal],
   [TagName, VfTag],
   [IconName, VfIcon],
+  [InputName, VfInput],
 ];
 
 const install = function (Vue: any) {
@@ -29,6 +31,7 @@ export const TaskTree = VfTaskTree;
 export const Medal = VfMedal;
 export const Tag = VfTag;
 export const Icon = VfIcon;
+export const Input = VfInput;
 
 export default {
   install,
@@ -38,4 +41,5 @@ export default {
   VfMedal,
   VfTag,
   VfIcon,
+  VfInput,
 };
