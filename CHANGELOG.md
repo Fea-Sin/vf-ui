@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1 / 2021-09-14
+
+add element-ui Input, VfInput
+
+add element-ui Button, VfButton
+
+add element-ui Popover, VfPopover
+
 ## 1.2.0 / 2021-09-10
 
 add element-ui Icon, VfIcon

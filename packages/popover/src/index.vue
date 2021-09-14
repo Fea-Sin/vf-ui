@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <div>POPOVER</div>
-    <Popover></Popover>
-  </div>
+  <Popover v-on="$listeners" v-bind="[$props, $attrs]">
+    <slot name="default" />
+    <template slot="reference" v-if="$slots.reference">
+      <slot name="reference"></slot>
+    </template>
+  </Popover>
 </template>
 <script lang="ts">
 import Vue from "vue";
