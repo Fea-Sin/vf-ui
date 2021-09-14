@@ -5,6 +5,7 @@ import VfTag, { TagName } from "../packages/tag";
 import VfIcon, { IconName } from "../packages/icon";
 import VfInput, { InputName } from "../packages/input";
 import VfButton, { ButtonName } from "../packages/button";
+import VfPopover, { PopoverName } from "../packages/popover";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -15,9 +16,10 @@ const components = [
   [IconName, VfIcon],
   [InputName, VfInput],
   [ButtonName, VfButton],
+  [PopoverName, VfPopover],
 ];
 
-const install = function (Vue: any) {
+const install = function (Vue: any): void {
   components.forEach((component) => {
     Vue.component(component[0], component[1]);
   });
@@ -35,6 +37,7 @@ export const Tag = VfTag;
 export const Icon = VfIcon;
 export const Input = VfInput;
 export const Button = VfButton;
+export const Popover = VfPopover;
 
 export default {
   install,
@@ -46,4 +49,5 @@ export default {
   VfIcon,
   VfInput,
   VfButton,
+  VfPopover,
 };

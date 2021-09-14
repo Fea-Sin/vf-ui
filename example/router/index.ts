@@ -51,6 +51,11 @@ const routes: Array<RouteConfig> = [
         name: "Button",
         component: () => import("E@/view/button/index.vue"),
       },
+      {
+        path: "popover",
+        name: "Popover",
+        component: () => import("E@/view/popover/index.vue"),
+      },
     ],
   },
 ];

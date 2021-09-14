@@ -6,5 +6,6 @@
   "tag": "./packages/tag/index.ts",
   "icon": "./packages/icon/index.ts",
   "input": "./packages/input/index.ts",
-  "button": "./packages/button/index.ts"
+  "button": "./packages/button/index.ts",
+  "popover": "./packages/popover/index.ts"
 }

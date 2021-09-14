@@ -6,6 +6,9 @@ import { VfTaskTree } from "./task-tree";
 import { VfMedal } from "./medal";
 import { VfTag } from "./tag";
 import { VfIcon } from "./icon";
+import { VfInput } from "./input";
+import { VfButton } from "./button";
+import { VfPopover } from "./popover";
 
 // The version
 export const version: string;
@@ -30,3 +33,9 @@ export class Medal extends VfMedal {}
 export class Tag extends VfTag {}
 
 export class Icon extends VfIcon {}
+
+export class Input extends VfInput {}
+
+export class Button extends VfButton {}
+
+export class Popover extends VfPopover {}

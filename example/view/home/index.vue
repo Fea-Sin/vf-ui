@@ -8,6 +8,7 @@
     <div class="box">ICON</div>
     <div class="box">INPUT</div>
     <div class="box">BUTTON</div>
+    <div class="box">POPOVER</div>
   </div>
 </template>
 <script lang="ts">

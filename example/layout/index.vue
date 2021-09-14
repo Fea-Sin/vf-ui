@@ -10,21 +10,24 @@
       <router-link to="/icon" class="box">ICON</router-link>
       <router-link to="/input" class="box">INPUT</router-link>
       <router-link to="/button" class="box">BUTTON</router-link>
+      <router-link to="/popover" class="box">POPOVER</router-link>
     </div>
     <div class="routeBox">
       <router-view />
     </div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
   data() {
     return {
       title: "VF-UI",
     };
   },
-};
+});
 </script>
+
 <style lang="less" scoped>
 .container {
   height: 100vh;
