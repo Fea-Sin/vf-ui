@@ -35,7 +35,23 @@
       </div>
       <div :class="['rcon', folder.leaf ? 'leaf' : 'folder']">
         <div class="cell hover" @click="() => taskChange(folder)">
-          <medal type="editor" :font-size="iconSize.BP" color="#545454" />
+          <Popover v-model="editorPop" width="350">
+            <div class="vf-task-operation-editor">
+              <div class="operation-editor-input">
+                <Input size="small" v-model="editorTitle">
+                  <Button slot="append" @click="() => editorTaskHandle(folder)">
+                    确定
+                  </Button>
+                </Input>
+              </div>
+            </div>
+            <medal
+              slot="reference"
+              type="editor"
+              :font-size="iconSize.BP"
+              color="#545454"
+            />
+          </Popover>
         </div>
         <div class="cell hover padding" @click="() => taskRemove(folder)">
           <medal type="minus" :font-size="iconSize.P" color="#545454" />
@@ -45,7 +61,25 @@
           v-if="!folder.leaf && folder.created"
           @click="() => taskAdd(folder)"
         >
-          <medal type="plus" :font-size="iconSize.P" color="#545454" />
+          <Popover width="350" v-model="addPop">
+            <div class="vf-task-operation-add">
+              <div>
+                新增任务
+                <span v-if="folder.createFolder">(文件夹)</span>
+              </div>
+              <div class="operation-add-input">
+                <Input size="small" v-model="addTitle">
+                  <Button slot="append">确定</Button>
+                </Input>
+              </div>
+            </div>
+            <medal
+              slot="reference"
+              type="plus"
+              :font-size="iconSize.P"
+              color="#545454"
+            />
+          </Popover>
         </div>
       </div>
     </div>
@@ -73,7 +107,10 @@
 <script lang="ts">
 import Vue from "vue";
 import Medal from "../../medal";
-import { ITaskItem } from "../../../types/task-tree";
+import { ITaskItem, ITaskItemAddNull } from "../../../types/task-tree";
+import Input from "../../input";
+import Popover from "../../popover";
+import Button from "../../button";
 
 export default Vue.extend({
   name: "folder",
@@ -88,8 +125,19 @@ export default Vue.extend({
     onRemove: Function,
     size: String,
   },
+  data() {
+    return {
+      editorPop: false,
+      editorTitle: "",
+      addPop: false,
+      addTitle: "",
+    };
+  },
   components: {
     Medal,
+    Input,
+    Popover,
+    Button,
   },
   computed: {
     iconSize() {
@@ -142,6 +190,7 @@ export default Vue.extend({
       }
     },
     taskChange(task: ITaskItem) {
+      this.editorTitle = task.title;
       if (this.onChange) {
         this.onChange(task);
       }
@@ -155,6 +204,11 @@ export default Vue.extend({
       if (this.onAdd) {
         this.onAdd(task);
       }
+    },
+    editorTaskHandle(task: ITaskItem) {
+      console.log("修改名称--->", task);
+      console.log("修改名称Input--->", this.editorTitle);
+      task.title = this.editorTitle;
     },
   },
 });

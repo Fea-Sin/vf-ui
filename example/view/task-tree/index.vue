@@ -29,6 +29,7 @@ export default Vue.extend({
         leaf: false,
         expanded: true,
         created: true,
+        createFolder: true,
         children: [
           {
             title: "ZR任务1989898989897",
@@ -111,7 +112,7 @@ export default Vue.extend({
 }
 .box-task {
   padding-left: 10px;
-  width: 350px;
+  width: 450px;
   background-color: #f2f2f2;
 }
 </style>

@@ -1,11 +1,14 @@
 import { VFUIComponent } from "./component";
 
-interface ITaskItem {
+export interface ITaskItem {
   title: string;
   leaf: boolean;
+  ITaskItem;
   expanded?: boolean;
   children?: Array<ITaskItem>;
 }
+
+export type ITaskItemAddNull = ITaskItem | null;
 
 type ISize = "large" | "default" | "small";
 

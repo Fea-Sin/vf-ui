@@ -4,6 +4,7 @@
 @vftasktree: vf-task-tree;
 @vftaskfolder: vf-task-folder;
 @vftask: vf-task;
+@vftaskoperation: vf-task-operation;
 
 @--task-tree-margin-large: 15px;
 @--task-tree-margin-default: 10px;
@@ -224,5 +225,17 @@ ul li {
     margin-left: @--task-tree-sub-folder-margin-left;
     margin-top: @--task-tree-margin-default;
     margin-bottom: @--task-tree-margin-default;
+  }
+}
+.@{vftaskoperation} {
+  &-editor {
+    .operation-editor-input {
+      padding: 8px 0;
+    }
+  }
+  &-add {
+    .operation-add-input {
+      padding: 8px 0;
+    }
   }
 }
