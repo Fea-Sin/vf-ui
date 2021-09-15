@@ -6,6 +6,9 @@ import VfIcon, { IconName } from "../packages/icon";
 import VfInput, { InputName } from "../packages/input";
 import VfButton, { ButtonName } from "../packages/button";
 import VfPopover, { PopoverName } from "../packages/popover";
+import VfSelect, { SelectName } from "../packages/select";
+import VfOption, { OptionName } from "../packages/option";
+import VfOptionGroup, { OptionGroupName } from "../packages/option-group";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -17,6 +20,9 @@ const components = [
   [InputName, VfInput],
   [ButtonName, VfButton],
   [PopoverName, VfPopover],
+  [SelectName, VfSelect],
+  [OptionName, VfOption],
+  [OptionGroupName, VfOptionGroup],
 ];
 
 const install = function (Vue: any): void {
@@ -38,6 +44,9 @@ export const Icon = VfIcon;
 export const Input = VfInput;
 export const Button = VfButton;
 export const Popover = VfPopover;
+export const Select = VfSelect;
+export const Option = VfOption;
+export const OptionGroup = VfOptionGroup;
 
 export default {
   install,
@@ -50,4 +59,7 @@ export default {
   VfInput,
   VfButton,
   VfPopover,
+  VfSelect,
+  VfOption,
+  VfOptionGroup,
 };

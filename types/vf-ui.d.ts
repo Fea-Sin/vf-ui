@@ -9,6 +9,9 @@ import { VfIcon } from "./icon";
 import { VfInput } from "./input";
 import { VfButton } from "./button";
 import { VfPopover } from "./popover";
+import { VfSelect } from "./select";
+import { VfOption } from "./option";
+import { VfOptionGroup } from "./option-group";
 
 // The version
 export const version: string;
@@ -39,3 +42,9 @@ export class Input extends VfInput {}
 export class Button extends VfButton {}
 
 export class Popover extends VfPopover {}
+
+export class Select extends VfSelect {}
+
+export class Option extends VfOption {}
+
+export class OptionGroup extends VfOptionGroup {}

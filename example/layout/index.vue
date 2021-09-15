@@ -11,6 +11,7 @@
       <router-link to="/input" class="box">INPUT</router-link>
       <router-link to="/button" class="box">BUTTON</router-link>
       <router-link to="/popover" class="box">POPOVER</router-link>
+      <router-link to="/select" class="box">SELECT</router-link>
     </div>
     <div class="routeBox">
       <router-view />

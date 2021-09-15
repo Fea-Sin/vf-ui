@@ -56,6 +56,11 @@ const routes: Array<RouteConfig> = [
         name: "Popover",
         component: () => import("E@/view/popover/index.vue"),
       },
+      {
+        path: "select",
+        name: "Select",
+        component: () => import("E@/view/select/index.vue"),
+      },
     ],
   },
 ];

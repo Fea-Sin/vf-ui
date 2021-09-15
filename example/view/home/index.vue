@@ -9,6 +9,7 @@
     <div class="box">INPUT</div>
     <div class="box">BUTTON</div>
     <div class="box">POPOVER</div>
+    <div class="box">SELECT</div>
   </div>
 </template>
 <script lang="ts">

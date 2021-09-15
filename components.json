@@ -7,5 +7,8 @@
   "icon": "./packages/icon/index.ts",
   "input": "./packages/input/index.ts",
   "button": "./packages/button/index.ts",
-  "popover": "./packages/popover/index.ts"
+  "popover": "./packages/popover/index.ts",
+  "select": "./packages/select/index.ts",
+  "option": "./packages/option/index.ts",
+  "option-group": "./packages/option-group/index.ts"
 }

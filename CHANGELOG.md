@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.2 / 2021-09-15
+
+add element-ui Select, VfSelect
+
+add element-ui Option, VfOption
+
+add element-ui OptionGroup, VfOptionGroup
+
 ## 1.2.1 / 2021-09-14
 
 add element-ui Input, VfInput
