@@ -30,7 +30,13 @@
         </Input>
       </div>
       <div class="item">
-        <Input v-model="myInpute"></Input>
+        <Input v-model="myInpute">
+          <Select v-model="mySelect" slot="prepend">
+            <Option label="文件夹" value="1"></Option>
+            <Option label="任务" value="2"></Option>
+          </Select>
+          <Button slot="append" icon="el-icon-search"></Button>
+        </Input>
       </div>
     </div>
     <div class="box">
@@ -64,11 +70,14 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import { Input } from "@/index";
+import { Input, Select, Option, Button } from "@/index";
 
 export default Vue.extend({
   components: {
     Input,
+    Select,
+    Option,
+    Button,
   },
   data() {
     return {
@@ -83,6 +92,7 @@ export default Vue.extend({
       myInputg: "",
       myInputh: "",
       myInputi: "",
+      mySelect: "",
     };
   },
   methods: {
@@ -106,5 +116,10 @@ export default Vue.extend({
   .item {
     margin-bottom: 10px;
   }
+}
+</style>
+<style lang="less">
+.el-select .el-input {
+  width: 100px;
 }
 </style>

@@ -69,6 +69,15 @@
               </div>
               <div class="operation-add-input">
                 <Input size="small" v-model="addTitle">
+                  <Select
+                    v-model="taskType"
+                    placeholder="请选择"
+                    slot="prepend"
+                    v-if="folder.createFolder"
+                  >
+                    <Option label="文件夹" value="1"></Option>
+                    <Option label="任务" value="2"></Option>
+                  </Select>
                   <Button slot="append">确定</Button>
                 </Input>
               </div>
@@ -107,10 +116,12 @@
 <script lang="ts">
 import Vue from "vue";
 import Medal from "../../medal";
-import { ITaskItem, ITaskItemAddNull } from "../../../types/task-tree";
+import { ITaskItem } from "../../../types/task-tree";
 import Input from "../../input";
 import Popover from "../../popover";
 import Button from "../../button";
+import Select from "../../select";
+import Option from "../../option";
 
 export default Vue.extend({
   name: "folder",
@@ -131,6 +142,7 @@ export default Vue.extend({
       editorTitle: "",
       addPop: false,
       addTitle: "",
+      taskType: "",
     };
   },
   components: {
@@ -138,6 +150,8 @@ export default Vue.extend({
     Input,
     Popover,
     Button,
+    Select,
+    Option,
   },
   computed: {
     iconSize() {
