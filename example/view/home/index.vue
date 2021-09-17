@@ -10,6 +10,10 @@
     <div class="box">BUTTON</div>
     <div class="box">POPOVER</div>
     <div class="box">SELECT</div>
+    <div class="box">MENU</div>
+    <div class="box">SUBMENU</div>
+    <div class="box">MENUITEM</div>
+    <div class="box">MENUITEMGROUP</div>
   </div>
 </template>
 <script lang="ts">

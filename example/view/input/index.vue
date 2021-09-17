@@ -119,7 +119,9 @@ export default Vue.extend({
 }
 </style>
 <style lang="less">
-.el-select .el-input {
-  width: 100px;
+.item {
+  .el-select .el-input {
+    width: 100px;
+  }
 }
 </style>

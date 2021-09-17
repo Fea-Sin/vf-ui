@@ -12,6 +12,9 @@ import { VfPopover } from "./popover";
 import { VfSelect } from "./select";
 import { VfOption } from "./option";
 import { VfOptionGroup } from "./option-group";
+import { VfMenu } from "./menu";
+import { VfMenuItem } from "./menu-item";
+import { VfSubmenu } from "./submenu";
 
 // The version
 export const version: string;
@@ -48,3 +51,9 @@ export class Select extends VfSelect {}
 export class Option extends VfOption {}
 
 export class OptionGroup extends VfOptionGroup {}
+
+export class Menu extends VfMenu {}
+
+export class MenuItem extends VfMenuItem {}
+
+export class Submenu extends VfSubmenu {}

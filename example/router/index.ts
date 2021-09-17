@@ -61,6 +61,11 @@ const routes: Array<RouteConfig> = [
         name: "Select",
         component: () => import("E@/view/select/index.vue"),
       },
+      {
+        path: "menu",
+        name: "Menu",
+        component: () => import("E@/view/menu/index.vue"),
+      },
     ],
   },
 ];
