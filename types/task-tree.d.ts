@@ -3,9 +3,10 @@ import { VFUIComponent } from "./component";
 export interface ITaskItem {
   title: string;
   leaf: boolean;
-  ITaskItem;
   expanded?: boolean;
   children?: Array<ITaskItem>;
+  created?: boolean;
+  createFolder?: boolean;
 }
 
 export type ITaskItemAddNull = ITaskItem | null;

@@ -78,7 +78,12 @@
                     <Option label="文件夹" value="1"></Option>
                     <Option label="任务" value="2"></Option>
                   </Select>
-                  <Button slot="append">确定</Button>
+                  <Button
+                    slot="append"
+                    @click="() => addTaskHandle(folder.createFolder)"
+                  >
+                    确定
+                  </Button>
                 </Input>
               </div>
             </div>
@@ -122,6 +127,7 @@ import Popover from "../../popover";
 import Button from "../../button";
 import Select from "../../select";
 import Option from "../../option";
+import { getTaskArrayIndex } from "../../utils/utils";
 
 export default Vue.extend({
   name: "folder",
@@ -142,7 +148,7 @@ export default Vue.extend({
       editorTitle: "",
       addPop: false,
       addTitle: "",
-      taskType: "",
+      taskType: "1",
     };
   },
   components: {
@@ -210,6 +216,13 @@ export default Vue.extend({
       }
     },
     taskRemove(task: ITaskItem) {
+      let currentNodeArray: ITaskItem[] =
+        (this.$parent as any).folder && (this.$parent as any).folder.children;
+      let index = getTaskArrayIndex(currentNodeArray, task);
+
+      if (typeof index === "number") {
+        this.$delete(currentNodeArray, index);
+      }
       if (this.onRemove) {
         this.onRemove(task);
       }
@@ -223,6 +236,33 @@ export default Vue.extend({
       console.log("修改名称--->", task);
       console.log("修改名称Input--->", this.editorTitle);
       task.title = this.editorTitle;
+    },
+    addTaskHandle(label: boolean) {
+      console.log("增加任务---", label);
+      let common = {
+        title: this.addTitle,
+        expanded: false,
+      };
+      let addObj = null;
+      let currentNodeArray: ITaskItem[] = this.folder && this.folder.children;
+
+      if (label && this.taskType === "1") {
+        // 增加文件夹
+        addObj = {
+          ...common,
+          leaf: false,
+          created: true,
+          children: [],
+        };
+      } else {
+        // 增加任务
+        addObj = {
+          ...common,
+          leaf: true,
+        };
+      }
+      currentNodeArray.push(addObj);
+      this.addTitle = "";
     },
   },
 });
