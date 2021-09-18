@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.3 / 2021-09-18
+
+complete vf-task-tree
+
 ## 1.2.2 / 2021-09-15
 
 add element-ui Select, VfSelect
