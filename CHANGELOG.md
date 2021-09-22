@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.4 / 2021-09-22
+
+add element-ui Tooltip, VfTooltip
+
 ## 1.2.3 / 2021-09-18
 
 complete vf-task-tree
