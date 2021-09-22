@@ -15,6 +15,7 @@ import { VfOptionGroup } from "./option-group";
 import { VfMenu } from "./menu";
 import { VfMenuItem } from "./menu-item";
 import { VfSubmenu } from "./submenu";
+import { VfTooltip } from "./tooltip";
 
 // The version
 export const version: string;
@@ -57,3 +58,5 @@ export class Menu extends VfMenu {}
 export class MenuItem extends VfMenuItem {}
 
 export class Submenu extends VfSubmenu {}
+
+export class Tooltip extends VfTooltip {}

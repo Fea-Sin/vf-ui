@@ -66,6 +66,11 @@ const routes: Array<RouteConfig> = [
         name: "Menu",
         component: () => import("E@/view/menu/index.vue"),
       },
+      {
+        path: "tooltip",
+        name: "Tooltip",
+        component: () => import("E@/view/tooltip/index.vue"),
+      },
     ],
   },
 ];

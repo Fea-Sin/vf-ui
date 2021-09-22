@@ -12,6 +12,7 @@ import VfOptionGroup, { OptionGroupName } from "../packages/option-group";
 import VfMenu, { MenuName } from "../packages/menu";
 import VfMenuItem, { MenuItemName } from "../packages/menu-item";
 import VfSubmenu, { SubmenuName } from "../packages/submenu";
+import VfTooltip, { TooltipName } from "../packages/tooltip";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -29,6 +30,7 @@ const components = [
   [MenuName, VfMenu],
   [MenuItemName, VfMenuItem],
   [SubmenuName, VfSubmenu],
+  [TooltipName, VfTooltip],
 ];
 
 const install = function (Vue: any): void {
@@ -56,6 +58,7 @@ export const OptionGroup = VfOptionGroup;
 export const Menu = VfMenu;
 export const MenuItem = VfMenuItem;
 export const Submenu = VfSubmenu;
+export const Tooltip = VfTooltip;
 
 export default {
   install,
@@ -74,4 +77,5 @@ export default {
   VfMenu,
   VfMenuItem,
   VfSubmenu,
+  VfTooltip,
 };
