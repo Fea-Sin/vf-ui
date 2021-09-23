@@ -1,0 +1,122 @@
+@import "./common/variable";
+
+@vftabs: vf-tabs;
+
+.@{vftabs} {
+  width: 100%;
+
+  &-panel {
+    background-color: #ddd;
+    height: 40px;
+    margin: 20px auto;
+    padding: 8px 8px 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  &-tab {
+    position: relative;
+    font-size: 12px;
+    border-radius: 10px 10px 0 0;
+    flex-basis: 220px;
+    display: flex;
+    align-items: center;
+    cursor: default;
+
+    &-icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+      i {
+        font-size: 16px;
+      }
+    }
+    &-line {
+      display: none;
+      left: -1px;
+      top: 6px;
+      position: absolute;
+      width: 1px;
+      height: 20px;
+      background-color: #909090;
+    }
+    &-close {
+      width: 18px;
+      height: 18px;
+      text-align: center;
+      line-height: 15px;
+      right: 8px;
+      top: 8px;
+      position: absolute;
+      font-size: 18px;
+      transform: rotate(45deg);
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover {
+        background-color: #d0d0d0;
+      }
+    }
+
+    &.active {
+      background-color: #fff;
+      z-index: 2;
+
+      &::before,
+      &::after {
+        border-top: 5px solid #fff;
+      }
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      transition: 0.3 all;
+    }
+    &::before {
+      bottom: -5px;
+      left: -15px;
+      transform: rotate(135deg);
+    }
+    &::after {
+      bottom: -5px;
+      right: -15px;
+      transform: rotate(205deg);
+    }
+    & + &:not(.active) &-line {
+      display: block;
+    }
+    &:hover:not(.active) {
+      background-color: #ededed;
+      &-line {
+        display: none !important;
+      }
+      &::before,
+      &::after {
+        border-top: 5px solid #ededed;
+      }
+    }
+    &:hover + & {
+      &-line {
+        display: none !important;
+      }
+    }
+  }
+
+  &-container {
+    width: 100%;
+  }
+}

@@ -13,6 +13,7 @@ import VfMenu, { MenuName } from "../packages/menu";
 import VfMenuItem, { MenuItemName } from "../packages/menu-item";
 import VfSubmenu, { SubmenuName } from "../packages/submenu";
 import VfTooltip, { TooltipName } from "../packages/tooltip";
+import VfTabs, { TabsName } from "../packages/tabs";
 
 const PACKAGE = require("../package.json");
 const components = [
@@ -31,6 +32,7 @@ const components = [
   [MenuItemName, VfMenuItem],
   [SubmenuName, VfSubmenu],
   [TooltipName, VfTooltip],
+  [TabsName, VfTabs],
 ];
 
 const install = function (Vue: any): void {
@@ -59,6 +61,7 @@ export const Menu = VfMenu;
 export const MenuItem = VfMenuItem;
 export const Submenu = VfSubmenu;
 export const Tooltip = VfTooltip;
+export const Tabs = VfTabs;
 
 export default {
   install,
@@ -78,4 +81,5 @@ export default {
   VfMenuItem,
   VfSubmenu,
   VfTooltip,
+  VfTabs,
 };

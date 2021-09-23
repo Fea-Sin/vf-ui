@@ -14,6 +14,7 @@
       <router-link to="/select" class="box">SELECT</router-link>
       <router-link to="/menu" class="box">MENU</router-link>
       <router-link to="/tooltip" class="box">TOOLTIP</router-link>
+      <router-link to="/tabs" class="box">TABS</router-link>
     </div>
     <div class="routeBox">
       <router-view />

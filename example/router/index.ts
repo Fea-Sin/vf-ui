@@ -71,6 +71,11 @@ const routes: Array<RouteConfig> = [
         name: "Tooltip",
         component: () => import("E@/view/tooltip/index.vue"),
       },
+      {
+        path: "tabs",
+        name: "Tabs",
+        component: () => import("E@/view/tabs/index.vue"),
+      },
     ],
   },
 ];

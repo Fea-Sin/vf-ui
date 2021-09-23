@@ -14,6 +14,8 @@
     <div class="box">SUBMENU</div>
     <div class="box">MENUITEM</div>
     <div class="box">MENUITEMGROUP</div>
+    <div class="box">TOOLTIP</div>
+    <div class="box">TABS</div>
   </div>
 </template>
 <script lang="ts">
