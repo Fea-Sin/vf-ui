@@ -16,6 +16,8 @@ import { VfMenu } from "./menu";
 import { VfMenuItem } from "./menu-item";
 import { VfSubmenu } from "./submenu";
 import { VfTooltip } from "./tooltip";
+import { VfTabs } from "./tabs";
+import { VfTabPane } from "./tab-pane";
 
 // The version
 export const version: string;
@@ -60,3 +62,7 @@ export class MenuItem extends VfMenuItem {}
 export class Submenu extends VfSubmenu {}
 
 export class Tooltip extends VfTooltip {}
+
+export class Tabs extends VfTabs {}
+
+export class TabPane extends VfTabPane {}

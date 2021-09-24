@@ -1,49 +1,74 @@
-<template>
-  <div class="vf-tabs">
-    <div class="vf-tabs-panel">
-      <div class="vf-tabs-tab">
-        <div class="vf-tabs-tab-icon">
-          <img src="https://jestjs.io/img/favicon/favicon.ico" alt="" />
-        </div>
-        <span>The Jest Object9</span>
-        <div class="vf-tabs-tab-close">+</div>
-        <div class="vf-tabs-tab-line"></div>
-      </div>
-      <div class="vf-tabs-tab">
-        <div class="vf-tabs-tab-icon">
-          <i class="el-icon-camera"></i>
-        </div>
-        <span>ChromeTab分栏实现</span>
-        <div class="vf-tabs-tab-close">+</div>
-        <div class="vf-tabs-tab-line"></div>
-      </div>
-      <div class="vf-tabs-tab active">
-        <div class="vf-tabs-tab-icon"></div>
-        <span>chokcoco（Coco）</span>
-        <div class="vf-tabs-tab-close">+</div>
-        <div class="vf-tabs-tab-line"></div>
-      </div>
-      <div class="vf-tabs-tab">
-        <div class="vf-tabs-tab-icon"></div>
-        <span>feasin（FeaSin）</span>
-        <div class="vf-tabs-tab-close">+</div>
-        <div class="vf-tabs-tab-line"></div>
-      </div>
-    </div>
-    <div class="vf-tabs-container"></div>
-    <TabNav></TabNav>
-    <TabPane></TabPane>
-  </div>
-</template>
-<script lang="ts">
+<script>
 import Vue from "vue";
 import TabNav from "./tab-nav.vue";
-import TabPane from "./tab-pane.vue";
 
 export default Vue.extend({
+  name: "VfTabs",
   components: {
     TabNav,
-    TabPane,
+  },
+  props: {
+    type: String,
+    activeName: String,
+    closable: Boolean,
+    addable: Boolean,
+    value: {},
+    beforeLeave: Function,
+  },
+  provide() {
+    return {
+      rootTabs: this,
+    };
+  },
+  data() {
+    return {
+      currentName: this.value || this.activeName,
+      panes: [],
+    };
+  },
+  watch: {},
+  methods: {},
+  render() {
+    let {
+      type,
+      handleTabClick,
+      handleTabRemove,
+      handleAdd,
+      currentName,
+      panes,
+      addable,
+    } = this;
+    const newButton = addable ? (
+      <span class="vf-tabs__new-tab" on-click={handleAdd}>
+        <i class="el-icon-plus"></i>
+      </span>
+    ) : null;
+    const navData = {
+      props: {
+        currentName,
+        onTabClick: handleTabClick,
+        onTabRemove: handleTabRemove,
+        type,
+        panes,
+      },
+      ref: "nav",
+    };
+    const header = (
+      <div class="vf-tabs__header">
+        {newButton}
+        <TabNav {...navData}></TabNav>
+      </div>
+    );
+    const panels = <div class="vf-tabs__content">{this.$slots.default}</div>;
+
+    return (
+      <div
+        class={{
+          "vf-tabs": true,
+        }}>
+        <div>{[header, panels]}</div>
+      </div>
+    );
   },
 });
 </script>
