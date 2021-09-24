@@ -1,9 +1,12 @@
-<template>
-  <div>
-    <div>Tab-pane</div>
-  </div>
-</template>
-<script lang="ts">
+<script>
 import Vue from "vue";
-export default Vue.extend({});
+export default Vue.extend({
+  render() {
+    return (
+      <div>
+        <div>HELLO</div>
+      </div>
+    );
+  },
+});
 </script>
