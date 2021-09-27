@@ -10,7 +10,10 @@ export default Vue.extend({
   props: {
     type: String,
     activeName: String,
-    closable: Boolean,
+    closable: {
+      type: Boolean,
+      default: true,
+    },
     addable: Boolean,
     value: {},
     beforeLeave: Function,
@@ -27,7 +30,53 @@ export default Vue.extend({
     };
   },
   watch: {},
-  methods: {},
+  methods: {
+    calcPaneInstances() {
+      if (this.$slots.default) {
+        const paneSlots = this.$slots.default.filter(
+          (vnode) =>
+            vnode.tag &&
+            vnode.componentOptions &&
+            vnode.componentOptions.Ctor.options.name === "VfTabsPane"
+        );
+        const panes = paneSlots.map(
+          ({ componentInstance }) => componentInstance
+        );
+        const panesChanged = !(
+          panes.length === this.panes.length &&
+          panes.every((pane, index) => pane === this.panes[index])
+        );
+        if (panesChanged) {
+          this.panes = panes;
+        }
+      } else if (this.panes.length !== 0) {
+        this.panes = [];
+      }
+    },
+    handleTabClick(tab, tabName, event) {
+      if (tab.disabled) return;
+      this.setCurrentName(tabName);
+      this.$emit("tab-click", tab, event);
+    },
+    setCurrentName(value) {
+      const changeCurrentName = () => {
+        this.currentName = value;
+        this.$emit("input", value);
+      };
+      if (this.currentName !== value && this.beforeLeave) {
+        const before = this.beforeLeave(value, this.currentName);
+        if (before && before.then) {
+          before.then(() => {
+            changeCurrentName();
+          });
+        } else if (before !== false) {
+          changeCurrentName();
+        }
+      } else {
+        changeCurrentName();
+      }
+    },
+  },
   render() {
     let {
       type,
@@ -69,6 +118,15 @@ export default Vue.extend({
         <div>{[header, panels]}</div>
       </div>
     );
+  },
+  created() {
+    if (!this.currentName) {
+      this.setCurrentName("0");
+    }
+  },
+  mounted() {
+    console.log("tabs--pane-->", this.$slots.default);
+    this.calcPaneInstances();
   },
 });
 </script>

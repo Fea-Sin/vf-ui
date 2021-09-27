@@ -82,6 +82,7 @@
   },
   "dependencies": {
     "element-ui": "^2.15.1",
+    "resize-observer-polyfill": "^1.5.1",
     "vue": "^2.6.12"
   }
 }
