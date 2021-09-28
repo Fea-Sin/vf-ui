@@ -2,9 +2,6 @@
 import Vue from "vue";
 import { Tabs, TabPane, Button, Icon, Input } from "@/index";
 
-/* eslint-disable */
-// @ts-ignore
-
 export default Vue.extend({
   components: {
     Tabs,
@@ -77,8 +74,6 @@ export default Vue.extend({
       </TabPane>
     ));
 
-    /* eslint-disable */
-    // @ts-ignore
     return (
       <div class="con">
         <div>TEST TABS</div>
@@ -91,7 +86,6 @@ export default Vue.extend({
         </div>
       </div>
     );
-    /* eslint-enable */
   },
   mounted() {
     // this.paneBox[0] = Taba;
