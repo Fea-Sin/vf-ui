@@ -139,10 +139,17 @@
   }
   &__new-tab {
     font-size: 20px;
-    line-height: 24px;
     padding: 0 10px;
+    margin: 0 10px;
     font-weight: bold;
-    cursor: pointer;
+    display: block;
+    cursor: default;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    &:hover {
+      background-color: #c1c3c7;
+    }
   }
   &__header {
     width: 100%;

@@ -17,16 +17,19 @@ export default Vue.extend({
           name: "1",
           label: "用户管理",
           myInput: "",
+          image: "https://jestjs.io/img/favicon/favicon.ico",
         },
         {
           name: "2",
           label: "权限管理",
           myInput: "",
+          icon: "printer",
         },
         {
           name: "3",
           label: "设置管理",
           myInput: "",
+          image: "https://github.com/fluidicon.png",
         },
         {
           name: "4",
@@ -34,6 +37,7 @@ export default Vue.extend({
           myInput: "",
         },
       ],
+      tabIndex: "4",
     };
   },
   methods: {
@@ -55,9 +59,26 @@ export default Vue.extend({
         this.activeName = activeName;
         this.paneBox = tabs.filter((tab) => tab.name !== targetName);
       }
+      if (action === "add") {
+        const title = "新增标签";
+        this.customAdd(title, "collection-tag");
+      }
     },
     handleClick() {
       this.activeName = "1";
+    },
+    handleCustomAdd() {
+      this.customAdd("设计任务", "price-tag", "666");
+    },
+    customAdd(title, icon, input = "") {
+      let newTabName = String(++this.tabIndex);
+      this.paneBox.push({
+        name: newTabName,
+        label: title,
+        myInput: input,
+        icon: icon,
+      });
+      this.activeName = newTabName;
     },
   },
   render(h) {
@@ -69,7 +90,8 @@ export default Vue.extend({
           <Input class="inputa" v-model={tab.myInput} />
         </div>
         <template slot="decor">
-          <img src="https://jestjs.io/img/favicon/favicon.ico" alt="" />
+          {tab.image && <img src={tab.image} alt="" />}
+          {tab.icon && <Icon name={tab.icon} />}
         </template>
       </TabPane>
     ));
@@ -82,7 +104,9 @@ export default Vue.extend({
         </Tabs>
         <div class="boxb">
           <Button vOn:click={this.handleClick}>HELLO</Button>
-          <Button type="primary">新增</Button>
+          <Button type="primary" vOn:click={this.handleCustomAdd}>
+            新增
+          </Button>
         </div>
       </div>
     );

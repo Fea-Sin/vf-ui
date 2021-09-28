@@ -65,6 +65,11 @@ export default Vue.extend({
       if (pane.disabled) return;
       ev.stopPropagation();
       this.$emit("edit", pane.name, "remove");
+      this.$emit("tab-remove", pane.name);
+    },
+    handleTabAdd() {
+      this.$emit("edit", null, "add");
+      this.$emit("tab-add");
     },
     setCurrentName(value) {
       const changeCurrentName = () => {
@@ -86,8 +91,19 @@ export default Vue.extend({
     },
   },
   render() {
-    let { handleTabClick, handleTabRemove, currentName, panes, addable } = this;
-    const newButton = addable ? <span class="vf-tabs__new-tab">+</span> : null;
+    let {
+      handleTabClick,
+      handleTabRemove,
+      currentName,
+      panes,
+      addable,
+      handleTabAdd,
+    } = this;
+    const newButton = addable ? (
+      <span on-click={handleTabAdd} class="vf-tabs__new-tab">
+        +
+      </span>
+    ) : null;
     const navData = {
       props: {
         currentName,
