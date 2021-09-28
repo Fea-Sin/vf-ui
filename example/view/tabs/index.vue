@@ -99,7 +99,11 @@ export default Vue.extend({
     return (
       <div class="con">
         <div>TEST TABS</div>
-        <Tabs v-model={this.activeName} vOn:edit={handleEditor} addable={true}>
+        <Tabs
+          v-model={this.activeName}
+          vOn:edit={handleEditor}
+          addable={true}
+          closable>
           {tabs}
         </Tabs>
         <div class="boxb">

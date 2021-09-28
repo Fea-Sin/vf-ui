@@ -11,7 +11,7 @@ export default Vue.extend({
     activeName: String,
     closable: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     addable: Boolean,
     value: {},

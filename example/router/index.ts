@@ -76,6 +76,11 @@ const routes: Array<RouteConfig> = [
         name: "Tabs",
         component: () => import("E@/view/tabs/index.vue"),
       },
+      {
+        path: "tabs-b",
+        name: "Tabsb",
+        component: () => import("E@/view/tabs/tabsb.vue"),
+      },
     ],
   },
 ];
