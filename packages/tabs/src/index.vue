@@ -8,7 +8,6 @@ export default Vue.extend({
     TabNav,
   },
   props: {
-    type: String,
     activeName: String,
     closable: {
       type: Boolean,
@@ -29,7 +28,11 @@ export default Vue.extend({
       panes: [],
     };
   },
-  watch: {},
+  watch: {
+    value(value) {
+      this.setCurrentName(value);
+    },
+  },
   methods: {
     calcPaneInstances() {
       if (this.$slots.default) {
@@ -58,6 +61,11 @@ export default Vue.extend({
       this.setCurrentName(tabName);
       this.$emit("tab-click", tab, event);
     },
+    handleTabRemove(pane, ev) {
+      if (pane.disabled) return;
+      ev.stopPropagation();
+      this.$emit("edit", pane.name, "remove");
+    },
     setCurrentName(value) {
       const changeCurrentName = () => {
         this.currentName = value;
@@ -78,34 +86,20 @@ export default Vue.extend({
     },
   },
   render() {
-    let {
-      type,
-      handleTabClick,
-      handleTabRemove,
-      handleAdd,
-      currentName,
-      panes,
-      addable,
-    } = this;
-    const newButton = addable ? (
-      <span class="vf-tabs__new-tab" on-click={handleAdd}>
-        <i class="el-icon-plus"></i>
-      </span>
-    ) : null;
+    let { handleTabClick, handleTabRemove, currentName, panes, addable } = this;
+    const newButton = addable ? <span class="vf-tabs__new-tab">+</span> : null;
     const navData = {
       props: {
         currentName,
         onTabClick: handleTabClick,
         onTabRemove: handleTabRemove,
-        type,
         panes,
       },
       ref: "nav",
     };
     const header = (
       <div class="vf-tabs__header">
-        {newButton}
-        <TabNav {...navData}></TabNav>
+        <TabNav {...navData}>{newButton}</TabNav>
       </div>
     );
     const panels = <div class="vf-tabs__content">{this.$slots.default}</div>;
@@ -125,7 +119,9 @@ export default Vue.extend({
     }
   },
   mounted() {
-    console.log("tabs--pane-->", this.$slots.default);
+    this.calcPaneInstances();
+  },
+  updated() {
     this.calcPaneInstances();
   },
 });

@@ -1,6 +1,5 @@
 <script>
 import Vue from "vue";
-// import { addResizeListener, removeResizeListener } from "@/utils/resize-event";
 
 // eslint-disable-next-line
 function noop() {}
@@ -22,7 +21,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      scrollable: false,
       navOffset: 0,
       isFocus: false,
       focusable: true,
@@ -38,6 +36,7 @@ export default Vue.extend({
     const tabs = this._l(panes, (pane, index) => {
       let tabName = pane.name || pane.index || index;
       const closable = pane.isClosable;
+      const decor = pane.$slots.decor;
 
       pane.index = `${index}`;
       const btnClose = closable ? (
@@ -47,6 +46,7 @@ export default Vue.extend({
             on-click={(ev) => onTabRemove(pane, ev)}></span>
         </div>
       ) : null;
+      const decorIcon = decor ? decor : null;
       const tabLabelContent = pane.$slots.label || pane.label;
       return (
         <div
@@ -61,10 +61,8 @@ export default Vue.extend({
           role="tab"
           ref="tabs"
           on-click={(ev) => onTabClick(pane, tabName, ev)}>
-          <div class="vf-tabs-tab-icon">
-            <img src="https://jestjs.io/img/favicon/favicon.ico" alt="" />
-          </div>
-          {tabLabelContent}
+          <div class="vf-tabs-tab-icon">{decorIcon}</div>
+          <div class="vf-tabs__item-text">{tabLabelContent}</div>
           {btnClose}
           <div class="vf-tabs-tab-line"></div>
         </div>
@@ -73,6 +71,7 @@ export default Vue.extend({
     return (
       <div class="vf-tabs__nav" role="tablist">
         {tabs}
+        {this.$slots.default}
       </div>
     );
   },

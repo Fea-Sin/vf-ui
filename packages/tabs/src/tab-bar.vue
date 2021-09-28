@@ -33,6 +33,39 @@
         </div>
       </div>
     </div>
+
+    <div class="con">
+      <div>TEST TABS</div>
+      <Tabs v-model="activeName" addable>
+        <TabPane label="用户管理" name="first" :closable="false">
+          用户管理
+          <template slot="decor">
+            <img src="https://jestjs.io/img/favicon/favicon.ico" alt="" />
+          </template>
+        </TabPane>
+        <TabPane label="配置管理" name="second" :closable="true">
+          配置管理
+          <div class="boxa">
+            <Button type="primary">按钮</Button>
+          </div>
+        </TabPane>
+        <TabPane label="角色管理" name="three">
+          <template slot="decor">
+            <Icon name="s-custom" />
+          </template>
+          角色管理
+        </TabPane>
+        <TabPane label="定时任务" name="four">
+          定时任务
+          <template slot="decor">
+            <Icon name="edit" />
+          </template>
+        </TabPane>
+        <TabPane label="定时任务运行补偿管理" name="five" :closable="false">
+          定时任务运行补偿管理
+        </TabPane>
+      </Tabs>
+    </div>
   </div>
 </template>
 <script lang="ts">
