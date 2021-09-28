@@ -54,8 +54,14 @@ Vue.use(VFUI);
 
 - VfMedal
 
+- [vf-tabs](./packages/tabs/docs/info.md)
+
 ## 组件展示
 
 - vf-task-tree
 
 ![vf-task-tree](./packages/task-tree/docs/image/vf-task-tree.png)
+
+- vf-tabs
+
+![vf-tabs](./packages/tabs/docs/image/vf-tabs.png)
