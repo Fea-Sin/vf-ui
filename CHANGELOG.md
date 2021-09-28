@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.5 / 2021-09-28
+
+add vf-tabs
+
 ## 1.2.4 / 2021-09-22
 
 add element-ui Tooltip, VfTooltip
