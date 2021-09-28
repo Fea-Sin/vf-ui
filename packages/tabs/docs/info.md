@@ -4,7 +4,7 @@
 
 ## api
 
-### Tabs Attributes
+### vf-tabs Attributes
 
 | api      | type      | description    | 默认值  |
 | -------- | --------- | -------------- | ------- |
@@ -12,14 +12,14 @@
 | closable | `boolean` | 标签是否可关闭 | `false` |
 | addable  | `boolean` | 标签是否可增加 | `false` |
 
-### TabPane Attributes
+### vf-tab-pane Attributes
 
 | api   | type     | description     | 默认值 |
 | ----- | -------- | --------------- | ------ |
 | label | `string` | tab 标签        | -      |
 | name  | `string` | tab active name | -      |
 
-### TabPane Slots
+### vf-tab-pane Slots
 
 | name  | 说明                                        |
 | ----- | ------------------------------------------- |
