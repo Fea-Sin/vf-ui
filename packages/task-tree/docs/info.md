@@ -73,6 +73,8 @@ interface Itasks {
   title: string;
   expanded: boolean;
   leaf: boolean;
+  created?: boolean;
+  createFolder?: boolean;
   children: Array<Itasks>;
 }
 
