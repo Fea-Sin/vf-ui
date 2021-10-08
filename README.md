@@ -60,6 +60,8 @@ Vue.use(VFUI);
 
 - vf-task-tree
 
+仿 Chrome Tab 组件，动态增加与删除，功能完备
+
 ![vf-task-tree](./packages/task-tree/docs/image/vf-task-tree.png)
 
 - vf-tabs
